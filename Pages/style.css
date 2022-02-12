@@ -1,0 +1,13 @@
+.leftButton {
+    position: absolute;
+    width: 55px;
+    height: 103px;
+    left: 72px;
+    top: 907px;
+
+    background: #797979;
+    border-radius: 6px;
+    transform: rotate(-90deg);
+}
+
+
