@@ -14,11 +14,10 @@ export default function fourthCaruselScreen({navigation}) {
     }
         const loadScene2 = () => {
             navigation.navigate('fifthCaruselScreen')
-        }/*
-        export default function firstCaruselScreen({navigation}) {
+        }
             const loadScene3 = () => {
-                navigation.navigate('Registration')
-            }*/
+                navigation.navigate('tripMaker')
+            }
 
 
 
@@ -30,7 +29,7 @@ export default function fourthCaruselScreen({navigation}) {
                 <Text style={styles.BigText}>СОЗДАТЬ МАРШРУТ</Text>
                 <TouchableOpacity onPress={loadScene} style={styles.buttonLeft}>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={loadScene} style={styles.buttonCenter}>
+                <TouchableOpacity onPress={loadScene3} style={styles.buttonCenter}>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={loadScene2} style={styles.buttonRight}>
                 </TouchableOpacity>

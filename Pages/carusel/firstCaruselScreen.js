@@ -15,9 +15,9 @@ export default function firstCaruselScreen({navigation}) {
         const loadScene2 = () => {
             navigation.navigate('secondCaruselScreen')
         }
-     /*       const loadScene3 = () => {
-                navigation.navigate('Registration')
-            }*/
+            const loadScene3 = () => {
+                navigation.navigate('newsview')
+            }
 
 
 
@@ -29,7 +29,7 @@ export default function firstCaruselScreen({navigation}) {
                 <Text style={styles.BigText}>НОВОСТИ ГРОДНО</Text>
                 <TouchableOpacity onPress={loadScene} style={styles.buttonLeft}>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={loadScene} style={styles.buttonCenter}>
+                <TouchableOpacity onPress={loadScene3} style={styles.buttonCenter}>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={loadScene2} style={styles.buttonRight}>
                 </TouchableOpacity>

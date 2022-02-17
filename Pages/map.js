@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 
 export default function map({navigation}) {
@@ -31,14 +31,17 @@ export default function map({navigation}) {
     // const {latitude, longitude, latitudeDelta, longitudeDelta} = this.state.region;
     return (
         <View style={styles.container}>
+            <Image source={require('../assets/Img/GRODNO.png')} style={[styles.logo]}/>
             <MapView
+
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+
                 style={styles.map}
                 region={{
-                    latitude: 53.741210,
-                    longitude: 23.875396,
-                    latitudeDelta: 0.015,
-                    longitudeDelta: 0.0121,
+                    latitude: 53.6966642383333,
+                    longitude: 23.82995616,
+                    latitudeDelta: 0.1,
+                    longitudeDelta: 0.01,
                 }}
             >
             </MapView>
@@ -50,13 +53,28 @@ export default function map({navigation}) {
 
 const styles = StyleSheet.create({
     container: {
-        ...StyleSheet.absoluteFillObject,
-        height: 400,
-        width: 400,
+            flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'center',
+        backgroundColor:'#000000',
+    },
+    logo:{
+        position:"absolute",
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '80%',
+        height: '20%',
+        top: '5%',
+
     },
     map: {
-        ...StyleSheet.absoluteFillObject,
+        position:"absolute",
+        alignItems: 'center',
+        width:'90%',
+        height:'75%',
+        top:'17%',
+        right:'5%',
+        paddingTop: Constants.statusBarHeight,
     },
+
 });

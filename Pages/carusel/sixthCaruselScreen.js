@@ -32,7 +32,7 @@ export default function sixthCaruselScreen({navigation}) {
 
     return (
         <ImageBackground
-            source={{uri: 'https://downloader.disk.yandex.ru/preview/da654521c6eb11293a9728e3a5db046d09b0bacea6a4de78b417e710765aea8a/62028950/rtaIHpwdwZ3AhmvU3RiciV_viVyXWTRbGtHkY0a6PdIRKZPGq3UWt8cep1-cbZ79HVkvOXT_NAotDeT1U14HhQ%3D%3D?uid=0&filename=map_of_the_city.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'}}
+            source={{uri: 'https://downloader.disk.yandex.ru/preview/c040bc6ac1cbe3c9c8f81e000a4cebf8b95de7182145f78663a4295dab57c3b2/620e57b4/rtaIHpwdwZ3AhmvU3RiciV_viVyXWTRbGtHkY0a6PdIRKZPGq3UWt8cep1-cbZ79HVkvOXT_NAotDeT1U14HhQ%3D%3D?uid=0&filename=map.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'}}
             style={[styles.backGround]}>
             <View style={styles.container}>
                 <Image source={require('../../assets/Img/GRODNO.png')} style={[styles.logo]}/>

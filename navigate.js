@@ -2,12 +2,15 @@ import * as React from 'react';
 import LogIn from './Pages/LogIn';
 import Menu from './Pages/Menu';
 import firstCaruselScreen from './Pages/carusel/firstCaruselScreen';
+import newsview from './Pages/newsPage/newsview';
 import secondCaruselScreen from './Pages/carusel/secondCaruselScreen';
 import thirdCaruselScreen from './Pages/carusel/thirdCaruselScreen';
 import fourthCaruselScreen from './Pages/carusel/fourthCaruselScreen';
+import tripMaker from './Pages/tripMaker';
 import fifthCaruselScreen from './Pages/carusel/fifthCaruselScreen';
 import sixthCaruselScreen from './Pages/carusel/sixthCaruselScreen';
 import seventhCaruselScreen from './Pages/carusel/seventhCaruselScreen';
+import Place_category from './Pages/AllPlacesCat.js/Place_category';
 import map from './Pages/map';
 import Registration from './Pages/Registration';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -39,6 +42,10 @@ export default function Navigate() {
                 component={firstCaruselScreen}
             />
             <Stack.Screen
+                name="newsview"
+                component={newsview}
+            />
+            <Stack.Screen
                 name="secondCaruselScreen"
                 component={secondCaruselScreen}
             />
@@ -49,6 +56,10 @@ export default function Navigate() {
             <Stack.Screen
                 name="fourthCaruselScreen"
                 component={fourthCaruselScreen}
+            />
+            <Stack.Screen
+                name="tripMaker"
+                component={tripMaker}
             />
             <Stack.Screen
                 name="fifthCaruselScreen"
@@ -65,6 +76,10 @@ export default function Navigate() {
             <Stack.Screen
                 name="seventhCaruselScreen"
                 component={seventhCaruselScreen}
+            />
+            <Stack.Screen
+                name="Place_category"
+                component={Place_category}
             />
         </Stack.Navigator>
     </NavigationContainer>
