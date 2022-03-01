@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
+import {FlatList, Image, StatusBar, StyleSheet, Text, View} from 'react-native';
 
 // Import getNews function from news.js
 import { getNews } from './news';
@@ -34,7 +34,7 @@ export default class Newsview extends React.Component {
 
     render( )  {
         return (
-            <View>
+            <View backgroundColor = {"#000000"}>
                 <Image source={require('../../assets/Img/111.png')} style={styles.logo}/>
 
                 <Text></Text>
@@ -43,6 +43,7 @@ export default class Newsview extends React.Component {
                 <Text></Text>
 
             <FlatList
+
                 data={this.state.articles}
                 renderItem={({ item }) => <Article article={item} />}
                 keyExtractor={item => item.url}
@@ -57,6 +58,7 @@ export default class Newsview extends React.Component {
     }
 }
 const styles = StyleSheet.create({
+
     logo: {
         width: '100%',
         height:'8%',
@@ -64,10 +66,13 @@ const styles = StyleSheet.create({
         right:'0%',
     },
     text:{
+
+        paddingTop: StatusBar.currentHeight,
         position:"relative",
         right:'-37%',
-        top:'5%',
+        top:'3%',
         fontSize: 20,
+        color:"#ffffff"
     }
 
 });

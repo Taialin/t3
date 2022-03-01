@@ -16,7 +16,7 @@ export default function seventhCaruselScreen({navigation}) {
             navigation.navigate('firstCaruselScreen')
         }
             const loadScene3 = () => {
-                navigation.navigate('Place_category')
+                navigation.navigate('DostoprimMain')
             }
 
 

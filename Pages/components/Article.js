@@ -5,6 +5,7 @@ import moment from 'moment';
 import AppLoading from "expo-app-loading";
 //import m from 'https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap';
 import bruno from "./../../assets/fonts/bruno.ttf"
+import {BackgroundImage} from "react-native-elements/dist/config";
 
 export default class Article extends React.Component {
 
@@ -28,30 +29,28 @@ export default class Article extends React.Component {
             <TouchableNativeFeedback
                 useForeground
                 onPress={() => Linking.openURL(url)}
+
             >
 
-                <Card
-
-                    featuredTitleStyle={featuredTitleStyle}
-
-                >
-                    <Image
-                        style={styles.image}
+                <Card   resizeMode="cover"
+                             style={[styles.hover, { backgroundColor: "black" }]}>
+                    <BackgroundImage
+                        style={styles.imagee}
                         resizeMode="cover"
                         source={{uri: urlToImage || def}}
-                    />
-                    <Text> {title} </Text>
+                    >
 
-                    <Text style={{marginBottom: 10, color: '#ffcdcd'}}>
-                        {description || defaultImg}
-                    </Text>
-                    <Divider style={{backgroundColor: '#000000'}}/>
+                    <Text style={styles.tit}> {title}  </Text>
+
+
+                    <Divider/>
                     <View
                         style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                         <Text style={noteStyle}>{source.name.toUpperCase()}</Text>
                         <Text style={noteStyle}>{time}</Text>
-                    </View>
 
+                    </View>
+                    </BackgroundImage>
                 </Card>
             </TouchableNativeFeedback>
         );
@@ -64,29 +63,40 @@ const styles = {
 
         margin: 10,
         fontFamily: 'bruno',
-        color: '#b15318',
+        color: '#ffffff',
         fontSize: 10
 
     },
     featuredTitleStyle: {
         high: '30%',
-        color: '#b15318',
+        color: '#ffffff',
         marginHorizontal: 40,
-        textShadowColor: '#FFB000',
+        textShadowColor: '#ffffff',
         textShadowOffset: {width: 3, height: 3},
-        textShadowRadius: 3
-    },
-    image: {
+        textShadowRadius: 3,
 
-        padding: 0,
+    },
+    imagee: {
+        justifyContent: 'center',
         width: "100%",
         height: 200,
         marginRight: 10,
-        opacity: 0.8,
+        opacity: 1,
         filter: 'black',
-        backgroundColor: '#0e0d09'
+        backgroundColor: '#ffffff'
+    },
+    tit: {
+        color: '#ffffff',
+        fontSize: 15
+    },
+    card: {
+        color: '#000000',
+        fontSize: 15
     },
     hover: {
-        opacity: 4,
+
+        width: "100%",
+        height: 190,
+        opacity: 0.4,
     }
 };

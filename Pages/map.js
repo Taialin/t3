@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         height:'75%',
         top:'17%',
         right:'5%',
-        paddingTop: Constants.statusBarHeight,
+
     },
 
 });

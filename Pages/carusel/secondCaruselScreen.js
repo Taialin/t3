@@ -27,7 +27,7 @@ export default function SecondCaruselScreen({navigation}) {
             <View style={styles.container}>
                 <Image source={require('../../assets/Img/GRODNO.png')} style={[styles.logo]}/>
                 <View style={{ position: "absolute", width: '52%', height: 436, left: '-35%', top: 237, backgroundColor: 'rgba(131, 89, 21, 0.3)', borderRadius: 45 }} />
-                <Text style={styles.BigText}>БРОНИРОВАНИЕ</Text>
+                <Text style={styles.BigText}>ПОГОДА</Text>
                 <TouchableOpacity onPress={loadScene} style={styles.buttonLeft}>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={loadScene} style={styles.buttonCenter}>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         alignItems: 'center',
         justifyContent: 'center',
-        right:'-8%',
+        right:'0%',
         top: '35%',
 
         fontFamily: 'bruno',

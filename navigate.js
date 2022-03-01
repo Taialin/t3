@@ -11,6 +11,7 @@ import fifthCaruselScreen from './Pages/carusel/fifthCaruselScreen';
 import sixthCaruselScreen from './Pages/carusel/sixthCaruselScreen';
 import seventhCaruselScreen from './Pages/carusel/seventhCaruselScreen';
 import Place_category from './Pages/AllPlacesCat.js/Place_category';
+import DostoprimMain from "./Pages/AllPlacesCat.js/DostoprimMain";
 import map from './Pages/map';
 import Registration from './Pages/Registration';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -23,7 +24,9 @@ export default function Navigate() {
     return <NavigationContainer>
         <Stack.Navigator
             screenOptions={{
-            headerShown: false
+            headerShown: false,
+                hideStatusBar: true,
+
         }}>
             <Stack.Screen
                 name="Menu"
@@ -76,6 +79,10 @@ export default function Navigate() {
             <Stack.Screen
                 name="seventhCaruselScreen"
                 component={seventhCaruselScreen}
+            />
+            <Stack.Screen
+                name="DostoprimMain"
+                component={DostoprimMain}
             />
             <Stack.Screen
                 name="Place_category"
