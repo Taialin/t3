@@ -18,6 +18,7 @@ export default class Article extends React.Component {
             urlToImage,
             url
         } = this.props.article;
+        return title;
         const {noteStyle, featuredTitleStyle} = styles;
         const time = moment(publishedAt || moment.now()).fromNow();
         const defaultImg = 'Картинку можно увидеть на сайте или увидеть никогда, хорошего вам дня CКАЖИТЕ СПАСИБО, ЧТО ОНО ХОТЬ ТАК РАБОТАЕТ';
@@ -54,8 +55,11 @@ export default class Article extends React.Component {
                 </Card>
             </TouchableNativeFeedback>
         );
+
     }
+
 }
+
 
 const styles = {
 

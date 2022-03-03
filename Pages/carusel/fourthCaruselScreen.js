@@ -1,5 +1,16 @@
 import React from 'react';
-import {Image, ImageBackground, StyleSheet, Text, View, Button, TouchableOpacity, SafeAreaView, TextInput} from 'react-native';
+import {
+    Image,
+    ImageBackground,
+    StyleSheet,
+    Text,
+    View,
+    Button,
+    TouchableOpacity,
+    SafeAreaView,
+    TextInput,
+    StatusBar
+} from 'react-native';
 import * as Font from "expo-font";
 import 'react-native-gesture-handler';
 //import style from  './style.css';
@@ -28,10 +39,13 @@ export default function fourthCaruselScreen({navigation}) {
                 <View style={{ position: "absolute", width: '88%', height: 436, left: '-44%', top: 237, backgroundColor: 'rgba(40,26,7,0.22)', borderRadius: 45 }} />
                 <Text style={styles.BigText}>СОЗДАТЬ МАРШРУТ</Text>
                 <TouchableOpacity onPress={loadScene} style={styles.buttonLeft}>
+                    <Image source={require("../../assets/Img/LButton.png")}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={loadScene3} style={styles.buttonCenter}>
+                    <Image source={require("../../assets/Img/CButton.png")}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={loadScene2} style={styles.buttonRight}>
+                    <Image source={require("../../assets/Img/RButton.png")}/>
                 </TouchableOpacity>
             </View>
 
@@ -43,33 +57,26 @@ export default function fourthCaruselScreen({navigation}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    },
-    backGround: {
-        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        paddingTop: StatusBar.currentHeight,
+    },
+    backGround: {
+        position:'relative',
         width:'100%',
-        left: '0%',
+        height:'100%',
         top: '0%'
     },
     logo: {
-        flex:1,
         position: "absolute",
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '95%',
+        width: '87%',
         height: '25%',
-        top: '7%',
-        right:'-48.5%',
-
+        top: '9%',
     },
 
     BigText: {
         position: 'absolute',
-        alignItems: 'center',
-        justifyContent: 'center',
-        right:'-33%',
-        top: '35%',
+        top: '27%',
 
         fontFamily: 'bruno',
         fontStyle: 'normal',
@@ -82,46 +89,22 @@ const styles = StyleSheet.create({
     },
     buttonLeft:{
         position: 'absolute',
-        left: '-36%',
-        top: '85%',
-
-        borderStyle: "solid",
-        borderLeftWidth: 20,
-        borderRightWidth: 20,
-        borderBottomWidth: 72,
-        borderLeftColor: "transparent",
-        borderRightColor: "transparent",
-        borderBottomColor: '#797979',
-        transform: [{ rotate: "-90deg" }],
-        borderRadius: 6,
+        left:"10%",
+        top:"95%"
 
     },
     buttonCenter:{
         position: 'absolute',
-        width: '29%',
-        height: '5%',
-        left: '-15.3%',
-        top: '87.6%',
-
-        backgroundColor: '#797979',
-        borderRadius: 6
+        top:"95.7%"
 
     },
     buttonRight:{
         position: 'absolute',
-        left: '23.5%',
-        top: '85%',
-        borderStyle: "solid",
-        borderLeftWidth: 20,
-        borderRightWidth: 20,
-        borderBottomWidth: 72,
-        borderLeftColor: "transparent",
-        borderRightColor: "transparent",
-        borderBottomColor: '#797979',
-        transform: [{ rotate: "90deg" }],
-        borderRadius: 6,
-        shadowColor:'black'
+        right:"10%",
+        top:"95%"
+
     }
+
 
 });
 
