@@ -34,16 +34,15 @@ export default class Newsview extends React.Component {
 
     render( )  {
         return (
-            <View backgroundColor = {"#000000"}>
+            <View style={styles.container} backgroundColor = {"#000000"}>
                 <Image source={require('../../assets/Img/111.png')} style={styles.logo}/>
 
                 <Text></Text>
-                <Text style={styles.text}>НОВОСТИ</Text>
+                <Text style={styles.text}>НОВОСТИ ГРОДНО</Text>
                 <Text></Text>
                 <Text></Text>
 
             <FlatList
-
                 data={this.state.articles}
                 renderItem={({ item }) => <Article article={item} />}
                 keyExtractor={item => item.url}
@@ -58,18 +57,21 @@ export default class Newsview extends React.Component {
     }
 }
 const styles = StyleSheet.create({
-
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: StatusBar.currentHeight,
+        color:"#000000"
+    },
     logo: {
+        position: "relative",
         width: '100%',
-        height:'8%',
-        top: '5%',
-        right:'0%',
+        height: '10%',
+        top: '3%',
     },
     text:{
-
-        paddingTop: StatusBar.currentHeight,
         position:"relative",
-        right:'-37%',
         top:'3%',
         fontSize: 20,
         color:"#ffffff"

@@ -18,11 +18,12 @@ export default class Article extends React.Component {
             urlToImage,
             url
         } = this.props.article;
-        return title;
+
         const {noteStyle, featuredTitleStyle} = styles;
         const time = moment(publishedAt || moment.now()).fromNow();
         const defaultImg = 'Картинку можно увидеть на сайте или увидеть никогда, хорошего вам дня CКАЖИТЕ СПАСИБО, ЧТО ОНО ХОТЬ ТАК РАБОТАЕТ';
         const def = 'https://cdnn11.img.sputnik.by/img/07e5/05/1a/1047722534_0:0:2048:1153_1920x0_80_0_0_3b79a99784692fe059eb2f6cd5b2fa97.jpg';
+
 
 
         return (
@@ -30,30 +31,28 @@ export default class Article extends React.Component {
             <TouchableNativeFeedback
                 useForeground
                 onPress={() => Linking.openURL(url)}
-
+                backgroundColor = {"#000000"}
             >
-
-                <Card   resizeMode="cover"
-                             style={[styles.hover, { backgroundColor: "black" }]}>
-                    <BackgroundImage
-                        style={styles.imagee}
-                        resizeMode="cover"
-                        source={{uri: urlToImage || def}}
-                    >
-
+                <BackgroundImage
+                    style={styles.imagee}
+                    resizeMode="cover"
+                    source={{uri: urlToImage || def }}
+                >
                     <Text style={styles.tit}> {title}  </Text>
-
-
                     <Divider/>
                     <View
-                        style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                        style={{flexDirection: 'row', justifyContent: 'space-between', }}>
                         <Text style={noteStyle}>{source.name.toUpperCase()}</Text>
                         <Text style={noteStyle}>{time}</Text>
 
                     </View>
-                    </BackgroundImage>
-                </Card>
+
+
+
+
+                </BackgroundImage>
             </TouchableNativeFeedback>
+
         );
 
     }
@@ -68,39 +67,40 @@ const styles = {
         margin: 10,
         fontFamily: 'bruno',
         color: '#ffffff',
-        fontSize: 10
+        fontSize: 10,
+        top:'17%'
 
     },
     featuredTitleStyle: {
         high: '30%',
-        color: '#ffffff',
+        color: '#0a0808',
         marginHorizontal: 40,
-        textShadowColor: '#ffffff',
+        textShadowColor: '#000000',
         textShadowOffset: {width: 3, height: 3},
         textShadowRadius: 3,
 
     },
+
     imagee: {
         justifyContent: 'center',
         width: "100%",
         height: 200,
-        marginRight: 10,
-        opacity: 1,
-        filter: 'black',
-        backgroundColor: '#ffffff'
+        tintColor: "#000000",
+
     },
+
     tit: {
+        top:'-20%',
+        left:'3%',
         color: '#ffffff',
         fontSize: 15
     },
     card: {
-        color: '#000000',
+        backgroundColor: '#000000',
         fontSize: 15
     },
     hover: {
 
-        width: "100%",
-        height: 190,
-        opacity: 0.4,
+
     }
 };
