@@ -15,8 +15,9 @@ import * as Font from "expo-font";
 import 'react-native-gesture-handler';
 //import style from  './style.css';
 
+
 const fonts = () => Font.loadAsync({
-    'bruno': require('../../android/app/src/main/assets/fonts/bruno.ttf')
+    'bruno': require('../../assets/fonts/bruno.ttf')
 
 });
 export default function SecondCaruselScreen({navigation}) {
@@ -25,11 +26,10 @@ export default function SecondCaruselScreen({navigation}) {
     }
         const loadScene2 = () => {
             navigation.navigate('thirdCaruselScreen')
-        }/*
-        export default function firstCaruselScreen({navigation}) {
+        }
+
             const loadScene3 = () => {
-                navigation.navigate('Registration')
-            }*/
+                navigation.navigate('WeatherPage')}
 
 
 
@@ -42,7 +42,7 @@ export default function SecondCaruselScreen({navigation}) {
                 <TouchableOpacity onPress={loadScene} style={styles.buttonLeft}>
                     <Image source={require("../../assets/Img/LButton.png")}/>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={loadScene} style={styles.buttonCenter}>
+                <TouchableOpacity onPress={loadScene3} style={styles.buttonCenter}>
                     <Image source={require("../../assets/Img/CButton.png")}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={loadScene2} style={styles.buttonRight}>

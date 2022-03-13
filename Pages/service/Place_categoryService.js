@@ -1,8 +1,13 @@
-const url =
-    "http://localhost:8087/place_category";
+import { baseUrl } from  "../config"
+const url = `${baseUrl}/place_category`;
 
 export async function getPlaceCategory() {
-    let result = await fetch(url).then(response => response.json());
-    return result.place_articles;
+    let res = await fetch(url, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        }
+    });
+    return await res.json();
 }
-

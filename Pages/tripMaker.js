@@ -7,7 +7,7 @@ import InputTextReg from "./InputTextReg";
 
 
 const fonts = () => Font.loadAsync({
-    'bruno': require('../android/app/src/main/assets/fonts/bruno.ttf')
+    'bruno': require('../assets/fonts/bruno.ttf')
 
 });
 export default function Registration({navigation}) {

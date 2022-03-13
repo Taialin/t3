@@ -4,6 +4,7 @@ import Menu from './Pages/Menu';
 import firstCaruselScreen from './Pages/carusel/firstCaruselScreen';
 import newsview from './Pages/newsPage/newsview';
 import secondCaruselScreen from './Pages/carusel/secondCaruselScreen';
+import WeatherPage from './Pages/WeatherPage'
 import thirdCaruselScreen from './Pages/carusel/thirdCaruselScreen';
 import fourthCaruselScreen from './Pages/carusel/fourthCaruselScreen';
 import tripMaker from './Pages/tripMaker';
@@ -51,6 +52,10 @@ export default function Navigate() {
             <Stack.Screen
                 name="secondCaruselScreen"
                 component={secondCaruselScreen}
+            />
+            <Stack.Screen
+                name="WeatherPage"
+                component={WeatherPage}
             />
             <Stack.Screen
                 name="thirdCaruselScreen"

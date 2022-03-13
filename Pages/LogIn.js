@@ -5,7 +5,7 @@ import 'react-native-gesture-handler';
 import TextImput from "./textImput";
 
 const fonts = () => Font.loadAsync({
-    'bruno': require('../android/app/src/main/assets/fonts/bruno.ttf')
+    'bruno': require('../assets/fonts/bruno.ttf')
 
 });
 export default function LogIn({navigation}) {

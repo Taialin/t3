@@ -18,7 +18,7 @@ import AppLoading from "expo-app-loading";
 
 
 const fonts = () => Font.loadAsync({
-    'bruno': require('../../android/app/src/main/assets/fonts/bruno.ttf'),
+    'bruno': require('../../assets/fonts/bruno.ttf'),
 'pixel': require('../../assets/fonts/pixel.ttf')
 });
 

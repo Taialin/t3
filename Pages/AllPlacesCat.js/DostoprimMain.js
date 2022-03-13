@@ -18,7 +18,7 @@ import AppLoading from "expo-app-loading";
 
 export default function DostoprimMain({navigation}) {
     const loadScene = () => {
-        navigation.navigate('LogIn')
+        navigation.navigate('Place_category')
     };
 
 
@@ -29,15 +29,15 @@ export default function DostoprimMain({navigation}) {
             <Image source={require('../../assets/Img/dotGreen.png')} style={[styles.logo]}/>
             <Text style={styles.text}> Достопримечательности Гродно</Text>
 
-            <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={true} >
-            <View style={styles.row} >
+            {/*<ScrollView style={styles.scrollView} showsVerticalScrollIndicator={true} >*/}
+            {/*<View style={styles.row} >*/}
 
 
-                    <TouchableOpacity onPress={loadScene} style={styles.proba}  >
+                    <TouchableOpacity onPress={loadScene} style={styles.lines}  >
                         <Image source={{uri: 'https://downloader.disk.yandex.ru/preview/cbfd6263c0106b6867ecb7386e6b0b0947c666328c2bda2166832ffeef7be34d/621e1a8b/d0CVePxxrHjCfRKdz0vsTrS36nrijTa6ZHvGjkxgeclDw1a9eEsLQFl3y5-3o0qTQ8TxGzmYGEh_kC3Uv71FkQ%3D%3D?uid=0&filename=bolnici.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048'}}  style={styles.lines}   />
                     </TouchableOpacity>
 
-               <TouchableOpacity onPress={loadScene} style={styles.proba} >
+          {/*     <TouchableOpacity onPress={loadScene} style={styles.proba} >
                     <Image source={{uri: 'https://downloader.disk.yandex.ru/preview/83a57d9db4571693598a82bdfe2f6d2c2f782b229157bf20443de992e9469377/621e1ad5/0Lml061oL1_-Qy8cmoqCydThn4TtsdQcgRLqfLZhiao6URnEXJCx0Chr8MHRpU6bRLWyCkaJWFjXjJm9QA8nDQ%3D%3D?uid=0&filename=galerei.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048'}}  style={styles.lines}/>
                 </TouchableOpacity>
 
@@ -75,9 +75,9 @@ export default function DostoprimMain({navigation}) {
 
                 <TouchableOpacity onPress={loadScene} style={styles.proba}>
                     <Image source={{uri: 'https://downloader.disk.yandex.ru/preview/9d12ee9cdc5690261fff416a835ba112420965a5b33761c1cceee343211abe12/621e1c37/jXld1CO38pmJ7fPtfdmhrs2aW87fBhbXWPLeqBr0OJ6vcjHMsZXmEiYPJbPH2D53I45QwxgPcBRlsCWGJwow0Q%3D%3D?uid=0&filename=temples.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048'}}  style={styles.lines}/>
-                </TouchableOpacity>
-            </View>
-            </ScrollView>
+                </TouchableOpacity>*/}
+            {/*</View>*/}
+            {/*</ScrollView>*/}
         </View>
 
     )
@@ -105,15 +105,8 @@ const styles = StyleSheet.create({
 
 
     },
-    row:{
-        flexDirection: "row",
-        flexWrap: "wrap",
 
-    },
-    lines:{
-        width: '100%',
-        height: '62%',
-    },
+
 
     scrollView: {
         position:'relative',
@@ -134,15 +127,23 @@ const styles = StyleSheet.create({
         letterSpacing: 0.09,
         color: '#FFFFFF'
     },
+    row:{
+        flex:1,
+        justifyContent:'space-between',
+        flexDirection: "column",
+        flexWrap: "wrap",
 
-    proba:{
-
-        justifyContent: 'center',
-        alignItems: 'center',
+    },
+    lines:{
         width: '100%',
-        height: '15%',
-        margin:'1%',
-        padding:'5%',
+        height: '20%',
+    },
+    proba:{
+        width: '100%',
+        height: '100%',
+        position:'absolute'
+
+
 
 
     },

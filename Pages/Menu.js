@@ -4,6 +4,7 @@ import * as Font from "expo-font";
 import 'react-native-gesture-handler';
 import LogIn from './LogIn'
 import AppLoading from "expo-app-loading";
+import { useFonts } from 'expo-font';
 
 
 export default function Menu({navigation}) {
@@ -12,17 +13,15 @@ export default function Menu({navigation}) {
     };
 
 
-    const [fontloaded,setfontloaded]=useState(false);
-    if(!fontloaded){
-        return(
-            <AppLoading
-                startAsync={fontloaded}
-                onFinish={()=>{
-                    setfontloaded(true);
-                }}
-                onError={console.warn}/>
-        )
-    }
+    const [fontloaded, fontLoadingError] = useFonts({
+        "bruno": require('../assets/fonts/bruno.ttf')
+    });
+    // if (fontLoadingError) {
+    //     return "Font loading error";
+    // }
+    // if (!fontloaded) {
+    //     return "Loading ...";
+    // }
     return (
 
         <View style={styles.container}>

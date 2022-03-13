@@ -19,10 +19,13 @@ export default class Place_category extends React.Component {
         this.fetchPlaceCategory();
     }
 
-    fetchPlaceCategory() {
-        getPlaceCategory()
-            .then(place_articles => this.setState({ place_articles, refreshing: false }))
-            .catch(() => this.setState({ refreshing: false }));
+    async fetchPlaceCategory() {
+        try {
+            let place_articles = await getPlaceCategory();
+            this.setState({place_articles, refreshing: false});
+        } catch(e) {
+            console.error(e);
+        }
     }
 
     handleRefresh() {
