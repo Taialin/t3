@@ -14,13 +14,10 @@ import {
 import * as Font from "expo-font";
 import 'react-native-gesture-handler';
 import AppLoading from "expo-app-loading";
+import {useFonts} from "expo-font";
 //import style from  './style.css';
 
 
-const fonts = () => Font.loadAsync({
-    'bruno': require('../../assets/fonts/bruno.ttf'),
-'pixel': require('../../assets/fonts/pixel.ttf')
-});
 
 export default function thirdCaruselScreen({navigation}) {
     const loadScene = () => {
@@ -42,17 +39,8 @@ export default function thirdCaruselScreen({navigation}) {
         navigation.navigate('')
     }
 
-    const [fontloaded,setfontloaded]=useState(false);
-    if(!fontloaded){
-        return(
-            <AppLoading
-                startAsync={fontloaded}
-                onFinish={()=>{
-                    setfontloaded(true);
-                }}
-                onError={console.warn}/>
-        )
-    }
+
+
 
     return (
         <ImageBackground source={{uri: 'https://downloader.disk.yandex.ru/preview/200fa843b3d70e79a065dbacf32f912714da96370838cdad561e8fc00ccc5e58/6220d32e/GmrgHCPxfvOGa37PTvYi28-zm8i2iMuz9g4yd4xxG8to6AKHmT9E0YFa_yxuzmmHVHFFo0FxgiTjZQorUUPRWg%3D%3D?uid=0&filename=add_serv.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048'}} style={[styles.backGround]}>
@@ -117,7 +105,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: '27%',
 
-        fontFamily: 'pixel',
+        fontFamily: 'bruno',
         fontStyle: 'normal',
         fontWeight: 'normal',
         fontSize: 20,
@@ -128,7 +116,7 @@ const styles = StyleSheet.create({
     },
     buttonLeft:{
         position: 'absolute',
-        left:"10%",
+        left:"4%",
         top:"95%"
 
     },
@@ -140,7 +128,7 @@ const styles = StyleSheet.create({
 
     buttonRight:{
         position: 'absolute',
-        right:"10%",
+        right:"4%",
         top:"95%"
 
     },

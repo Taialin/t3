@@ -3,18 +3,19 @@ import {Image, ImageBackground, StyleSheet, Text, View, Button, TouchableOpacity
 import * as Font from "expo-font";
 import 'react-native-gesture-handler';
 import InputTextReg from "./InputTextReg";
+import {useFonts} from "expo-font";
 
 
 
-const fonts = () => Font.loadAsync({
-    'bruno': require('../assets/fonts/bruno.ttf')
 
-});
+
 export default function Registration({navigation}) {
     const loadScene = () => {
         navigation.navigate('Menu')
     }
-
+    const [fontloaded, fontLoadingError] = useFonts({
+        "bruno": require('../assets/fonts/bruno.ttf')
+    });
 
     return (
         <ImageBackground source={{uri:'https://downloader.disk.yandex.ru/preview/ef9d2088c8bf3d7596a8e562c7ce7408a06c747e14c1584b86d3921ad5c241d8/620262e6/71uJYeeJ2g2ZJtco5473qqPo0g6z5Y53XW6XyJ33MfUvF2i2ZHeV1FvO79NK12N6BvWwpS572QE2Cp9TzZ9jgQ%3D%3D?uid=0&filename=regestration.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048'}} style={[styles.backGround]}>

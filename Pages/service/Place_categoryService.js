@@ -11,3 +11,19 @@ export async function getPlaceCategory() {
     });
     return await res.json();
 }
+
+const request = new XMLHttpRequest();
+request.onreadystatechange = (e) => {
+    if (request.readyState !== 4) {
+        return;
+    }
+
+    if (request.status === 200) {
+        console.log('success', request.responseText);
+    } else {
+        console.warn('error');
+    }
+};
+
+request.open('GET', `${baseUrl}/place_category`);
+request.send();

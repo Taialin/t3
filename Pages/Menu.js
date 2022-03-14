@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {ActivityIndicator, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import * as Font from "expo-font";
 import 'react-native-gesture-handler';
 import LogIn from './LogIn'
@@ -8,20 +8,39 @@ import { useFonts } from 'expo-font';
 
 
 export default function Menu({navigation}) {
+
+const fetchFont = async () => {
+    await Font.loadAsync({
+        "bruno": require('../android/app/src/main/assets/fonts/bruno.ttf'),
+        "Arsenal": require('../android/app/src/main/assets/fonts/Arsenal.ttf'),
+        "futurisExtra": require('../android/app/src/main/assets/fonts/futurisExtra.ttf'),
+        "pixel": require('../android/app/src/main/assets/fonts/pixel.ttf'),
+        'prostoOne': require('../android/app/src/main/assets/fonts/prostoOne.ttf'),
+        'PoiretOne': require('../android/app/src/main/assets/fonts/PoiretOne.ttf'),
+
+    });
+};
+
+        const [IsReady, SetIsReady] = useState(false);
+
+        const LoadFonts = async () => {
+            await fetchFont();
+        };
+
+        if (!IsReady) {
+            return (
+                <AppLoading
+                    startAsync={LoadFonts}
+                    onFinish={() => SetIsReady(true)}
+                    onError={() => {}}
+                />
+            );
+        }
+
     const loadScene = () => {
         navigation.navigate('LogIn')
     };
 
-
-    const [fontloaded, fontLoadingError] = useFonts({
-        "bruno": require('../assets/fonts/bruno.ttf')
-    });
-    // if (fontLoadingError) {
-    //     return "Font loading error";
-    // }
-    // if (!fontloaded) {
-    //     return "Loading ...";
-    // }
     return (
 
         <View style={styles.container}>

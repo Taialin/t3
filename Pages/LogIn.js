@@ -3,11 +3,10 @@ import {Image, ImageBackground, StyleSheet, Text, View, Button, TouchableOpacity
 import * as Font from "expo-font";
 import 'react-native-gesture-handler';
 import TextImput from "./textImput";
+import {useFonts} from "expo-font";
 
-const fonts = () => Font.loadAsync({
-    'bruno': require('../assets/fonts/bruno.ttf')
 
-});
+
 export default function LogIn({navigation}) {
     const loadScene = () => {
         navigation.navigate('Registration')
@@ -15,6 +14,9 @@ export default function LogIn({navigation}) {
     const loadScene2 = () => {
         navigation.navigate('firstCaruselScreen')
     }
+    const [fontloaded, fontLoadingError] = useFonts({
+        "bruno": require('../assets/fonts/bruno.ttf')
+    });
 
         return (
             <ImageBackground source={{uri:'https://downloader.disk.yandex.ru/preview/0ca8f57bceefd25fdf7d580290e45217f0516adccd50b7e45fd6cbcc49cb5ed0/6202623e/O8RJc04RuhPi0xW8PR43gwZZ0C-Q-sunPloSfxlXS5HO81xPDM_sZzIjyi2rID_izU8Q9ycJhGwZrJ7GGs0rEg%3D%3D?uid=0&filename=N3vrtOWidNk.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'}} style={[styles.backGround]}>
@@ -25,10 +27,10 @@ export default function LogIn({navigation}) {
                         editable
                         maxLength={40}
                     </TextImput>
-                    <TouchableOpacity title='TAP' font={fonts('bruno')} onPress={loadScene} style={styles.buttonREG}>
+                    <TouchableOpacity title='TAP' onPress={loadScene} style={styles.buttonREG}>
                         <Text style={styles.buttonText}>РЕГИСТРАЦИЯ</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity title='TAP' font={fonts('bruno')} onPress={loadScene2} style={styles.buttonGO}>
+                    <TouchableOpacity title='TAP' onPress={loadScene2} style={styles.buttonGO}>
                         <Text style={styles.buttonText}>ВОЙТИ</Text>
                     </TouchableOpacity>
 
