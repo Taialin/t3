@@ -1,71 +1,56 @@
-import React, { Component } from 'react'
-import {View, Text, TouchableOpacity, TextInput, StyleSheet, StatusBar} from 'react-native'
-import statusBar from "react-native-web/dist/exports/StatusBar";
+import React from 'react'
+import {StyleSheet, TextInput, View} from 'react-native'
 
-class InputsReg extends Component {
-    /*   state = {
-           email: '',
-           password: ''
-       }
-       handleEmail = (text) => {
-           this.setState({ email: text })
-       }
-       handlePassword = (text) => {
-           this.setState({ password: text })
-       }
-       login = (email, pass) => {
-           alert('email: ' + email + ' password: ' + pass)
-       }*/
+export default class InputsReg extends React.Component<Props> {
     render() {
         return (
-            <View >
-                <TextInput style = {styles.reg}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "ИМЯ"
-                           placeholderTextColor = "#FFFFFF"
-                           autoCapitalize = "none"
-                           onChangeText = {this.props.fuck()}/>
+            <View>
+                <TextInput style={styles.reg}
+                           underlineColorAndroid="transparent"
+                           placeholder="ИМЯ"
+                           placeholderTextColor="#FFFFFF"
+                           autoCapitalize="none"
+                           onChangeText={(value) => this.props.changeName(value)}/>
 
-                <TextInput style = {styles.reg}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "ФАМЛИЯ"
-                           placeholderTextColor = "#FFFFFF"
-                           autoCapitalize = "none"
-                           alignItems = "end"
-                           onChangeText = {this.handlePassword}/>
-                <TextInput style = {styles.reg}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "ОТ КУДА ВЫ"
-                           placeholderTextColor = "#FFFFFF"
-                           autoCapitalize = "none"
-                           alignItems = "end"
-                           onChangeText = {this.handlePassword}/>
-                <TextInput style = {styles.reg}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "ТЕЛЕФОН"
-                           placeholderTextColor = "#FFFFFF"
-                           autoCapitalize = "none"
-                           alignItems = "end"
-                           onChangeText = {this.handlePassword}/>
-                <TextInput style = {styles.reg}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "E-MAIL"
-                           placeholderTextColor = "#FFFFFF"
-                           autoCapitalize = "none"
-                           alignItems = "end"
-                           onChangeText = {this.handlePassword}/>
+                <TextInput style={styles.reg}
+                           underlineColorAndroid="transparent"
+                           placeholder="ФАМЛИЯ"
+                           placeholderTextColor="#FFFFFF"
+                           autoCapitalize="none"
+                           alignItems="end"
+                           onChangeText={(value) => this.props.changeSurname(value)}/>
+                <TextInput style={styles.reg}
+                           underlineColorAndroid="transparent"
+                           placeholder="ОТ КУДА ВЫ"
+                           placeholderTextColor="#FFFFFF"
+                           autoCapitalize="none"
+                           alignItems="end"
+                           onChangeText={(value) => this.props.changePlace(value)}/>
+                <TextInput style={styles.reg}
+                           underlineColorAndroid="transparent"
+                           placeholder="ТЕЛЕФОН"
+                           placeholderTextColor="#FFFFFF"
+                           autoCapitalize="none"
+                           alignItems="end"
+                           onChangeText={(value) => this.props.changePhone(value)}/>
+                <TextInput style={styles.reg}
+                           underlineColorAndroid="transparent"
+                           placeholder="E-MAIL"
+                           placeholderTextColor="#FFFFFF"
+                           autoCapitalize="none"
+                           alignItems="end"
+                           onChangeText={(value) => this.props.changeEmail(value)}/>
 
 
             </View>
         )
     }
 }
-export default InputsReg
 
 const styles = StyleSheet.create({
 
     reg: {
-        alignItems:"center",
+        alignItems: "center",
         position: 'relative',
         width: 300,
         height: 50,
