@@ -1,59 +1,73 @@
-import React, {useState} from 'react';
-import {View, Linking, TouchableNativeFeedback, Image} from 'react-native';
-import {Text, Button, Card, Divider} from 'react-native-elements';
-import moment from 'moment';
-import AppLoading from "expo-app-loading";
-//import m from 'https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap';
+import React from 'react';
+import {StatusBar, TouchableOpacity} from 'react-native';
 import bruno from "./../../assets/fonts/bruno.ttf"
-import {id, category_of_place} from '../dto/Place_category'
-export default class PlaceArticle extends React.Component {
+import {BackgroundImage} from "react-native-elements/dist/config";
+import {useNavigation} from "@react-navigation/native";
+
+export default class PlaceArticle extends React.Component<Props> {
+
+    constructor(props) {
+        super(props);
+    }
+
+    loadScene() {
+        this.props.navigation.navigate('MaketForListsOfNamePlaces',
+            this.props.place_articles.id);
+    }
 
     render() {
+
         const {
             id,
             category_of_place,
+            image,
         } = this.props.place_articles;
         const {noteStyle, featuredTitleStyle} = styles;
 
 
-
         return (
 
-            <TouchableNativeFeedback>
-                <Card featuredTitleStyle={featuredTitleStyle}>
+            <TouchableOpacity onPress={() => this.loadScene()}>
+                <BackgroundImage
+                    style={styles.imagee}
+                    resizeMode="cover"
+                    source={{uri: image}}>
+                </BackgroundImage>
+            </TouchableOpacity>
 
-                    <Text> {id} </Text>
-                    <Text style={{marginBottom: 10, color: '#ffcdcd'}}>
-                        {category_of_place}
-                    </Text>
-                    <Divider style={{backgroundColor: '#000000'}}/>
-                    <View
-                        style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                    </View>
-
-                </Card>
-            </TouchableNativeFeedback>
         );
     }
 }
 
 const styles = {
 
+
+    container: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: StatusBar.currentHeight,
+    },
     noteStyle: {
 
         margin: 10,
         fontFamily: 'bruno',
-        color: '#b15318',
-        fontSize: 10
+        color: '#000000',
+        fontSize: 10,
+        top: '17%'
 
     },
-    featuredTitleStyle: {
-        high: '30%',
-        color: '#b15318',
-        marginHorizontal: 40,
-        textShadowColor: '#FFB000',
-        textShadowOffset: {width: 3, height: 3},
-        textShadowRadius: 3
+    r: {
+        height: '10%',
+        width: '10%',
+        backgroundColor: '#0a0808',
+    },
+
+    imagee: {
+        paddingTop: StatusBar.currentHeight + 10,
+        width: "100%",
+        margin: '3%',
+        padding: '3%'
+
     },
 
 };

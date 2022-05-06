@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
+import {View, Text, TouchableOpacity, TextInput, StyleSheet, StatusBar} from 'react-native'
+import statusBar from "react-native-web/dist/exports/StatusBar";
 
 class InputsReg extends Component {
     /*   state = {
@@ -17,18 +18,31 @@ class InputsReg extends Component {
        }*/
     render() {
         return (
-            <View style = {styles.container}>
+            <View >
                 <TextInput style = {styles.reg}
                            underlineColorAndroid = "transparent"
-                           placeholder = "NAME"
+                           placeholder = "ИМЯ"
                            placeholderTextColor = "#FFFFFF"
-
                            autoCapitalize = "none"
-                           onChangeText = {this.handleEmail}/>
+                           onChangeText = {this.props.fuck()}/>
 
                 <TextInput style = {styles.reg}
                            underlineColorAndroid = "transparent"
-                           placeholder = "SURNAME"
+                           placeholder = "ФАМЛИЯ"
+                           placeholderTextColor = "#FFFFFF"
+                           autoCapitalize = "none"
+                           alignItems = "end"
+                           onChangeText = {this.handlePassword}/>
+                <TextInput style = {styles.reg}
+                           underlineColorAndroid = "transparent"
+                           placeholder = "ОТ КУДА ВЫ"
+                           placeholderTextColor = "#FFFFFF"
+                           autoCapitalize = "none"
+                           alignItems = "end"
+                           onChangeText = {this.handlePassword}/>
+                <TextInput style = {styles.reg}
+                           underlineColorAndroid = "transparent"
+                           placeholder = "ТЕЛЕФОН"
                            placeholderTextColor = "#FFFFFF"
                            autoCapitalize = "none"
                            alignItems = "end"
@@ -36,20 +50,6 @@ class InputsReg extends Component {
                 <TextInput style = {styles.reg}
                            underlineColorAndroid = "transparent"
                            placeholder = "E-MAIL"
-                           placeholderTextColor = "#FFFFFF"
-                           autoCapitalize = "none"
-                           alignItems = "end"
-                           onChangeText = {this.handlePassword}/>
-                <TextInput style = {styles.reg}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "TELEPHONE"
-                           placeholderTextColor = "#FFFFFF"
-                           autoCapitalize = "none"
-                           alignItems = "end"
-                           onChangeText = {this.handlePassword}/>
-                <TextInput style = {styles.reg}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "PASSWORD"
                            placeholderTextColor = "#FFFFFF"
                            autoCapitalize = "none"
                            alignItems = "end"
@@ -63,19 +63,15 @@ class InputsReg extends Component {
 export default InputsReg
 
 const styles = StyleSheet.create({
-    container: {
-        paddingTop: 5
-    },
+
     reg: {
         alignItems:"center",
-        display: "flex",
         position: 'relative',
-        margin: 5,
-        width: '350%',
-        height:'12%',
-        right: '130%',
-        top: '45%',
-        backgroundColor: 'rgba(213, 139, 66, 0.6)',
+        width: 300,
+        height: 50,
+        margin: 10,
+        padding: 17,
+        backgroundColor: 'rgba(213, 139, 66, 0.3)',
         color: '#FFFFFF',
         borderRadius: 53,
 

@@ -6,6 +6,10 @@ import newsview from './Pages/newsPage/newsview';
 import secondCaruselScreen from './Pages/carusel/secondCaruselScreen';
 import WeatherPage from './Pages/WeatherPage'
 import thirdCaruselScreen from './Pages/carusel/thirdCaruselScreen';
+import {flowerOrder} from './Pages/pagesFromCarusel/flowerOrder';
+import {taxiOrder} from './Pages/pagesFromCarusel/taxiOrder';
+import {cinemaOrder} from './Pages/pagesFromCarusel/cinemaOrder';
+import {cafeOrder} from './Pages/pagesFromCarusel/cafeOrder';
 import fourthCaruselScreen from './Pages/carusel/fourthCaruselScreen';
 import tripMaker from './Pages/tripMaker';
 import fifthCaruselScreen from './Pages/carusel/fifthCaruselScreen';
@@ -17,6 +21,7 @@ import map from './Pages/map';
 import Registration from './Pages/Registration';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
+import MaketForListsOfNamePlaces from "./Pages/AllPlacesCat.js/MaketForListsOfNamePlaces";
 
 const Stack = createStackNavigator();
 
@@ -62,6 +67,22 @@ export default function Navigate() {
                 component={thirdCaruselScreen}
             />
             <Stack.Screen
+                name="flowerOrder"
+                component={flowerOrder}
+            />
+            <Stack.Screen
+                name="taxiOrder"
+                component={taxiOrder}
+            />
+            <Stack.Screen
+                name="cinemaOrder"
+                component={cinemaOrder}
+            />
+            <Stack.Screen
+                name="cafeOrder"
+                component={cafeOrder}
+            />
+            <Stack.Screen
                 name="fourthCaruselScreen"
                 component={fourthCaruselScreen}
             />
@@ -93,6 +114,13 @@ export default function Navigate() {
                 name="Place_category"
                 component={Place_category}
             />
+            <Stack.Screen
+                name="MaketForListsOfNamePlaces"
+                component={MaketForListsOfNamePlaces}
+            />
         </Stack.Navigator>
     </NavigationContainer>
 }
+
+
+module.exports = Navigate;

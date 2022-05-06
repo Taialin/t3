@@ -17,7 +17,7 @@ const fetchFont = async () => {
         "pixel": require('../android/app/src/main/assets/fonts/pixel.ttf'),
         'prostoOne': require('../android/app/src/main/assets/fonts/prostoOne.ttf'),
         'PoiretOne': require('../android/app/src/main/assets/fonts/PoiretOne.ttf'),
-
+        'Chulok': require('../android/app/src/main/assets/fonts/Chulok.ttf'),
     });
 };
 

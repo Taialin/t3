@@ -27,30 +27,29 @@ export default class Article extends React.Component {
 
 
         return (
-
             <TouchableNativeFeedback
                 useForeground
                 onPress={() => Linking.openURL(url)}
-                backgroundColor = {"#000000"}
+                //backgroundColor = {"#000000"}
             >
                 <BackgroundImage
                     style={styles.imagee}
                     resizeMode="cover"
                     source={{uri: urlToImage || def }}
                 >
+                    <View  style={{
+                        flex: 1,
+                        backgroundColor: "rgba(0,0,0,0.7)",
+                    }}>
                     <Text style={styles.tit}> {title}  </Text>
-                    <Divider/>
-                    <View
-                        style={{flexDirection: 'row', justifyContent: 'space-between', }}>
-                        <Text style={noteStyle}>{source.name.toUpperCase()}</Text>
-                        <Text style={noteStyle}>{time}</Text>
+
+                        <Divider/>
+                        <Text style={noteStyle}>{source.name.toUpperCase()}"                             " {time}</Text>
 
                     </View>
-
-
-
-
+                    <Divider/>
                 </BackgroundImage>
+
             </TouchableNativeFeedback>
 
         );
@@ -66,13 +65,17 @@ const styles = {
 
         margin: 10,
         fontFamily: 'bruno',
+        position:'absolute',
         color: '#ffffff',
         fontSize: 10,
-        top:'17%'
+        top:'80%',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
 
     },
+
     featuredTitleStyle: {
-        high: '30%',
+        height: '30%',
         color: '#0a0808',
         marginHorizontal: 40,
         textShadowColor: '#000000',
@@ -90,7 +93,7 @@ const styles = {
     },
 
     tit: {
-        top:'-20%',
+        top:'5%',
         left:'3%',
         color: '#ffffff',
         fontSize: 15

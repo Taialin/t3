@@ -23,12 +23,9 @@ export default function fifthCaruselScreen({navigation}) {
     const loadScene2 = () => {
         navigation.navigate('sixthCaruselScreen')
     }
-
-    /*   export default function firstCaruselScreen({navigation}) {
-           const loadScene3 = () => {
-               navigation.navigate('Registration')
-           }
-*/
+    const loadScene3 = () => {
+        navigation.navigate('Registration')
+    }
 
 
     return (
@@ -47,7 +44,7 @@ export default function fifthCaruselScreen({navigation}) {
                 <TouchableOpacity onPress={loadScene} style={styles.buttonLeft}>
                     <Image source={require("../../assets/Img/LButton.png")}/>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={loadScene} style={styles.buttonCenter}>
+                <TouchableOpacity onPress={loadScene3} style={styles.buttonCenter}>
                     <Image source={require("../../assets/Img/CButton.png")}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={loadScene2} style={styles.buttonRight}>
