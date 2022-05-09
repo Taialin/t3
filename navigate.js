@@ -11,7 +11,6 @@ import {taxiOrder} from './Pages/pagesFromCarusel/taxiOrder';
 import {cinemaOrder} from './Pages/pagesFromCarusel/cinemaOrder';
 import {cafeOrder} from './Pages/pagesFromCarusel/cafeOrder';
 import fourthCaruselScreen from './Pages/carusel/fourthCaruselScreen';
-import tripMaker from './Pages/tripMaker';
 import fifthCaruselScreen from './Pages/carusel/fifthCaruselScreen';
 import sixthCaruselScreen from './Pages/carusel/sixthCaruselScreen';
 import seventhCaruselScreen from './Pages/carusel/seventhCaruselScreen';
@@ -24,6 +23,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import MaketForListsOfNamePlaces from "./Pages/AllPlacesCat.js/MaketForListsOfNamePlaces";
 import SelectedPlace from "./Pages/components/SelectedPlace";
 import MaketOfPlace from "./Pages/AllPlacesCat.js/MaketOfPlace";
+import CreatedRoute from "./Pages/CreatedRoute";
 
 const Stack = createStackNavigator();
 
@@ -89,10 +89,6 @@ export default function Navigate() {
                 component={fourthCaruselScreen}
             />
             <Stack.Screen
-                name="tripMaker"
-                component={tripMaker}
-            />
-            <Stack.Screen
                 name="fifthCaruselScreen"
                 component={fifthCaruselScreen}
             />
@@ -127,6 +123,10 @@ export default function Navigate() {
             <Stack.Screen
                 name="SelectedPlace"
                 component={SelectedPlace}
+            />
+            <Stack.Screen
+                name="CreatedRoute"
+                component={CreatedRoute}
             />
         </Stack.Navigator>
     </NavigationContainer>

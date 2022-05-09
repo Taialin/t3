@@ -35,3 +35,16 @@ export async function getById(id) {
     });
     return await res.json();
 }
+
+export async function getByIds(ids) {
+    const url = `${baseUrl}/all_places_ids`;
+    let res = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(ids),
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        }
+    });
+    return await res.json();
+}

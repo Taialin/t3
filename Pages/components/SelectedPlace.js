@@ -1,11 +1,8 @@
-import React, {useState} from 'react';
-import {View, Linking, TouchableNativeFeedback, Image, TouchableOpacity, StatusBar} from 'react-native';
-import {Text, Button, Card, Divider} from 'react-native-elements';
-import moment from 'moment';
-import AppLoading from "expo-app-loading";
+import React from 'react';
+import {AsyncStorage, StatusBar, TouchableOpacity, View} from 'react-native';
+import {Text} from 'react-native-elements';
 //import m from 'https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap';
 import bruno from "./../../assets/fonts/bruno.ttf"
-import {BackgroundImage} from "react-native-elements/dist/config";
 
 //import { Card } from "@paraboly/react-native-card";
 
@@ -14,7 +11,21 @@ export default class SelectedPlace extends React.Component<Props> {
         super(props);
     }
 
+    addToRoute = async () => {
+        let route = await AsyncStorage.getItem('route');
+        if (route == null) {
+            route = [];
+        } else {
+            route = JSON.parse(route);
+        }
+        if (!route.includes(this.props.selectedPlaces.id)) {
+            route.push(this.props.selectedPlaces.id);
+            await AsyncStorage.setItem('route', JSON.stringify(route));
+        }
+    }
+
     render() {
+        console.warn(this.props);
         const {
             id,
             place_category, name_of_place, image, age, years,
@@ -24,23 +35,25 @@ export default class SelectedPlace extends React.Component<Props> {
         const {noteStyle, featuredTitleStyle} = styles;
 
 
-
         return (
 
             <View style={styles.container}>
 
-             {/*   <BackgroundImage
+                {/*   <BackgroundImage
                     style={styles.image}
                     resizeMode="cover"
                     source={{uri: image}}>
 
 */}
 
-                    <Text style={styles.title}>  {name_of_place} }</Text>
+                <Text style={styles.title}>  {name_of_place}</Text>
 
                 <Text style={styles.noteStyle}>  {history}</Text>
-              {/*  </BackgroundImage>*/}
-                </View>
+                <TouchableOpacity title='TAP' onPress={this.addToRoute} style={styles.button}>
+                    <Text style={styles.buttonText}>Добавить в маршрут</Text>
+                </TouchableOpacity>
+                {/*  </BackgroundImage>*/}
+            </View>
 
 
         );
@@ -57,7 +70,7 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center',
         paddingTop: StatusBar.currentHeight,
-        backgroundColor:'#000000'
+        backgroundColor: '#000000'
     },
     title: {
 
@@ -65,7 +78,7 @@ const styles = {
         fontFamily: 'bruno',
         color: '#ffffff',
         fontSize: 15,
-        top:'19%'
+        top: '19%'
 
     },
     noteStyle: {
@@ -74,14 +87,14 @@ const styles = {
         fontFamily: 'bruno',
         color: '#ffffff',
         fontSize: 15,
-        top:'20%'
+        top: '20%'
 
     },
     image: {
-        paddingTop: StatusBar.currentHeight +10,
+        paddingTop: StatusBar.currentHeight + 10,
         width: "50%",
         margin: '3%',
-        padding:'3%',
+        padding: '3%',
 
 
     },
@@ -104,8 +117,8 @@ const styles = {
     },
 
     tit: {
-        top:'-20%',
-        left:'3%',
+        top: '-20%',
+        left: '3%',
         color: '#ffffff',
         fontSize: 15
     },
@@ -113,8 +126,5 @@ const styles = {
         backgroundColor: '#000000',
         fontSize: 15
     },
-    hover: {
-
-
-    }
+    hover: {}
 };
