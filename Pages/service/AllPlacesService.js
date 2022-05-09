@@ -24,21 +24,14 @@ export async function getByCategoryId(category) {
     return await res.json();
 }
 
-const request = new XMLHttpRequest();
-request.onreadystatechange = (e) => {
-    if (request.readyState !== 4) {
-        return;
-    }
-
-    if (request.status === 200) {
-        console.log('success', request.responseText);
-    } else {
-        console.warn('error');
-    }
-};
-
-request.open('GET', `${baseUrl}/place_category`);
-request.send();
-
-
-
+export async function getById(id) {
+    const url = `${baseUrl}/all_places_id?id=` + id;
+    let res = await fetch(url, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        }
+    });
+    return await res.json();
+}

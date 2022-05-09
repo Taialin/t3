@@ -11,16 +11,13 @@ const getCustomer = () => {
 
 export async function registrate(customer) {
     const url = `${baseUrl}/registrate`;
-    return fetch(url, {
+    let res = await fetch(url, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(customer)
-    })
-        .then((response) => response.json())
-        .catch((error) => {
-            console.error(error);
-        });
+    });
+    return await res.json();
 }

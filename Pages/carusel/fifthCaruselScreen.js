@@ -38,7 +38,7 @@ export default function fifthCaruselScreen({navigation}) {
                 <View style={{ backgroundColor: "#293e41", height: 25, width: 90, top: '26.36%',left:'10%', position:'absolute',  alignItems: 'center', justifyContent: 'center',}} />
                 <View style={{ backgroundColor: "#293e41", height: 10, width: 205, bottom: '13%',right:'0%', position:'absolute',  alignItems: 'center', justifyContent: 'center',}} />
 
-                <Text style={styles.BigText}>ГОТОВЫЕ РЕШЕНИЯ</Text>
+                <Text style={styles.BigText}>ВЫБЕРИ МАРШРУТ</Text>
                 <Text style={styles.VerhText}>Главные события на сегодня{"\n"}в режиме онлайн</Text>
                 <Text style={styles.NizText}>страны, мира. обновление каждый час </Text>
                 <TouchableOpacity onPress={loadScene} style={styles.buttonLeft}>

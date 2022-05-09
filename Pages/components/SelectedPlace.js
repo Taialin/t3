@@ -1,55 +1,48 @@
 import React, {useState} from 'react';
 import {View, Linking, TouchableNativeFeedback, Image, TouchableOpacity, StatusBar} from 'react-native';
 import {Text, Button, Card, Divider} from 'react-native-elements';
+import moment from 'moment';
+import AppLoading from "expo-app-loading";
+//import m from 'https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap';
 import bruno from "./../../assets/fonts/bruno.ttf"
 import {BackgroundImage} from "react-native-elements/dist/config";
 
-export default class SelectedCatgoryArticle extends React.Component<Props> {
+//import { Card } from "@paraboly/react-native-card";
+
+export default class SelectedPlace extends React.Component<Props> {
     constructor(props) {
         super(props);
-    }
-
-    loadScene() {
-        this.props.navigation.navigate('MaketOfPlace',
-            this.props.selectedCatgoryArticles.id);
     }
 
     render() {
         const {
             id,
-            name_of_place,
-            image,
-        } = this.props.selectedCatgoryArticles;
+            place_category, name_of_place, image, age, years,
+            style_of_the_place, opening_hours, place_on_map, history, visit_cost, Link_to_the_site
+        } = this.props.selectedPlaces;
 
         const {noteStyle, featuredTitleStyle} = styles;
 
 
 
         return (
-            <TouchableOpacity  onPress={() => this.loadScene()}>
-                <Card  style={styles.imagee}>
+
+            <View style={styles.container}>
+
+             {/*   <BackgroundImage
+                    style={styles.image}
+                    resizeMode="cover"
+                    source={{uri: image}}>
+
+*/}
+
+                    <Text style={styles.title}>  {name_of_place} }</Text>
+
+                <Text style={styles.noteStyle}>  {history}</Text>
+              {/*  </BackgroundImage>*/}
+                </View>
 
 
-                    <Image
-                        style={styles.image}
-                        resizeMode="cover"
-                        source={{uri: image}}>
-                    </Image>
-                        <View  style={{
-                            flex: 1,
-                            backgroundColor: "#000000",
-                            width:'113%',
-                            height: 50,
-                            left:'-6.5%'
-                        }}>
-
-                        <Text style={styles.noteStyle}>  {name_of_place}</Text>
-
-                        </View>
-
-
-                </Card>
-    </TouchableOpacity>
         );
 
     }
@@ -59,14 +52,29 @@ export default class SelectedCatgoryArticle extends React.Component<Props> {
 
 const styles = {
 
-    noteStyle: {
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: StatusBar.currentHeight,
+        backgroundColor:'#000000'
+    },
+    title: {
 
         margin: 10,
-        backgroundColor: '#0a0808',
         fontFamily: 'bruno',
         color: '#ffffff',
-        fontSize: 10,
-        top:'17%'
+        fontSize: 15,
+        top:'19%'
+
+    },
+    noteStyle: {
+        paddingTop: StatusBar.currentHeight,
+        margin: 10,
+        fontFamily: 'bruno',
+        color: '#ffffff',
+        fontSize: 15,
+        top:'20%'
 
     },
     image: {

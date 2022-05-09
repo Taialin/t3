@@ -22,6 +22,8 @@ import Registration from './Pages/Registration';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import MaketForListsOfNamePlaces from "./Pages/AllPlacesCat.js/MaketForListsOfNamePlaces";
+import SelectedPlace from "./Pages/components/SelectedPlace";
+import MaketOfPlace from "./Pages/AllPlacesCat.js/MaketOfPlace";
 
 const Stack = createStackNavigator();
 
@@ -117,6 +119,14 @@ export default function Navigate() {
             <Stack.Screen
                 name="MaketForListsOfNamePlaces"
                 component={MaketForListsOfNamePlaces}
+            />
+            <Stack.Screen
+                name="MaketOfPlace"
+                component={MaketOfPlace}
+            />
+            <Stack.Screen
+                name="SelectedPlace"
+                component={SelectedPlace}
             />
         </Stack.Navigator>
     </NavigationContainer>

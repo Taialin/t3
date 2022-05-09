@@ -1,15 +1,13 @@
 import React from 'react';
-import {FlatList, Image, StatusBar, StyleSheet, View} from 'react-native';
-import SelectedCatgoryArticle from "../components/SelectedCatgoryArticle";
-import {getByCategoryId} from "../service/AllPlacesService";
-import PlaceArticle from "../components/PlaceArticle";
+import {FlatList, StatusBar, StyleSheet, View} from 'react-native';
+import {getById} from "../service/AllPlacesService";
+import SelectedPlace from "../components/SelectedPlace";
 
-
-export default class MaketForListsOfNamePlaces extends React.Component<Props> {
+export default class MaketOfPlace extends React.Component<Props> {
     constructor(props) {
         super(props);
         this.categoryId = props.route.params;
-        this.state = { selectedCatgoryArticles: [], refreshing: true };
+        this.state = { selectedPlaces: [], refreshing: true };
         this.fetchAllPlace = this.fetchAllPlace.bind(this);
     }
     // Called after a component is mounted
@@ -19,33 +17,27 @@ export default class MaketForListsOfNamePlaces extends React.Component<Props> {
 
     async fetchAllPlace() {
         try {
-            let selectedCatgoryArticles = await getByCategoryId(this.categoryId);
-            this.setState({selectedCatgoryArticles, refreshing: false});
+            let selectedPlaces = await getById(this.categoryId);
+            this.setState({selectedPlaces, refreshing: false});
         } catch(e) {
             console.error(e);
         }
     }
 
-    handleRefresh() {
-        this.setState(
-            {
-                refreshing: true
-            },
-            () => this.fetchAllPlace()
-        );
-    }
 
     render( )  {
 
         return (
             <View style={styles.container}>
+{/*
                 <Image source={require('../../assets/Img/dotGreen.png')} style={styles.logo}/>
-               {/* <Text style={styles.text}>{category_of_place}</Text>*/}
+*/}
+                {/* <Text style={styles.text}>{category_of_place}</Text>*/}
 
                 <FlatList style={styles.ttt}
-                          data={this.state.selectedCatgoryArticles}
-                          renderItem={({ item }) => <SelectedCatgoryArticle navigation={this.props.navigation}
-                                                                            selectedCatgoryArticles={item}/>}
+                          data={this.state.selectedPlaces}
+                          renderItem={({ item }) => <SelectedPlace navigation={this.props.navigation}
+                                                                   selectedPlaces={item}/>}
                           keyExtractor={item => item.url}
 
                 />
@@ -62,7 +54,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingTop: StatusBar.currentHeight,
-        backgroundColor:"#000000"
+        backgroundColor:"#030303"
     },
     logo: {
         position: "relative",
@@ -78,7 +70,7 @@ const styles = StyleSheet.create({
     },
     ttt: {
         width: '100%',
-        padding: 20,
+        padding: 10,
 
     },
     text:{

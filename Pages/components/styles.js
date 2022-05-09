@@ -10,9 +10,9 @@ const styles = StyleSheet.create({
     },
     backGround: {
         position:'absolute',
-        width:'100%',
-        height:'100%',
-        top: '5%'
+        width:'87%',
+        height:'47%',
+        top: '30%'
     },
     logo: {
         position: "absolute",
@@ -23,23 +23,23 @@ const styles = StyleSheet.create({
 
     BigText: {
         position: 'absolute',
-        top: '55%',
-        left:"2%",
+        top: '70%',
+        left:"7%",
         fontFamily: 'futurisExtra',
         fontStyle: 'normal',
         fontWeight: '400',
-        fontSize: 65,
-        lineHeight: 60,
+        fontSize: 50,
+        lineHeight: 54,
         color: '#FFFFFF',
     },
     VerhText: {
         position: 'absolute',
-        top: '48%',
+        top: '31%',
         right:"8%",
-        fontFamily: 'Chulok',
-       /* textTransform:'uppercase',*/
+        fontFamily: 'PoiretOne',
+        textTransform:'uppercase',
         fontStyle: 'normal',
-        fontSize: 23,
+        fontSize: 13,
         fontWeight: '800',
     /*    lineHeight: 18,*/
         color: '#b2b2b2',
@@ -48,12 +48,12 @@ const styles = StyleSheet.create({
     },
     NizText: {
         position: 'absolute',
-        bottom: '30%',
-        left:"2%",
-        fontFamily: 'Chulok',
-       /* textTransform:'uppercase',*/
+        bottom: '14%',
+        right:"2%",
+        fontFamily: 'PoiretOne',
+        textTransform:'uppercase',
         fontStyle: 'normal',
-        fontSize: 15,
+        fontSize: 10,
         fontWeight: '400',
         lineHeight: 18,
         color: '#FFFFFF',
