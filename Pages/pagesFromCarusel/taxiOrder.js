@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { WebView } from 'react-native-webview';
-import {Image} from "react-native";
+import {Image, StyleSheet, View} from "react-native";
 import { PermissionsAndroid } from 'react-native';
 
 PermissionsAndroid.request(
@@ -42,16 +42,26 @@ export class taxiOrder extends Component {
 
     render() {
         return (
-
-        <WebView
-
-                source={{ uri: 'https://taxi.yandex.by/grodno/tariff/' }}
-                style={{ marginTop: 30 }}
-                startInLoadingState={true}
-
-
-            />
-
+            <View style={[styles.container]}>
+                <Image source={require('../../assets/Img/111.png')} style={[styles.logo]}/>
+                <WebView
+                    source={{ uri: 'https://taxi.yandex.by/grodno/tariff/' }}
+                    style={{ marginTop: 2 , width:'100%', top:38}}
+                    startInLoadingState={true}
+                />
+            </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    logo: {
+        width: "80%",
+        height: 55,
+        top: '5%',
+        left:'10%'
+    },
+})

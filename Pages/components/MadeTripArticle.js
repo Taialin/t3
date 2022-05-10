@@ -1,68 +1,104 @@
-// import React from 'react';
-// import {StatusBar, TouchableOpacity} from 'react-native';
-// import bruno from "./../../assets/fonts/bruno.ttf"
-// import {BackgroundImage} from "react-native-elements/dist/config";
-// import {useNavigation} from "@react-navigation/native";
-//
-// export default class MadeTripArticle extends React.Component<Props> {
-//
-//     constructor(props) {
-//         super(props);
-//     }
-//
-//     render() {
-//
-//         const {
-//             id,
-//             category_of_place,
-//             image,
-//         } = this.props.madeTripArticle;
-//         const {noteStyle, featuredTitleStyle} = styles;
-//
-//
-//         return (
-//
-//             <TouchableOpacity onPress={() => this.loadScene()}>
-//                 <BackgroundImage
-//                     style={styles.imagee}
-//                     resizeMode="cover"
-//                     source={{uri: image}}>
-//                 </BackgroundImage>
-//             </TouchableOpacity>
-//
-//         );
-//     }
-// }
-//
-// const styles = {
-//
-//
-//     container: {
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//         paddingTop: StatusBar.currentHeight,
-//     },
-//     noteStyle: {
-//
-//         margin: 10,
-//         fontFamily: 'bruno',
-//         color: '#000000',
-//         fontSize: 10,
-//         top: '17%'
-//
-//     },
-//     r: {
-//         height: '10%',
-//         width: '10%',
-//         backgroundColor: '#0a0808',
-//     },
-//
-//     imagee: {
-//         paddingTop: StatusBar.currentHeight + 10,
-//         width: "100%",
-//         margin: '3%',
-//         padding: '3%'
-//
-//     },
-//
-// };
+import React, {useState} from 'react';
+import {View, Linking, TouchableNativeFeedback, Image} from 'react-native';
+import {Text, Button, Card, Divider} from 'react-native-elements';
+import moment from 'moment';
+import AppLoading from "expo-app-loading";
+//import m from 'https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap';
+import bruno from "./../../assets/fonts/bruno.ttf"
+import {BackgroundImage} from "react-native-elements/dist/config";
+
+export default class MadeTripArticle extends React.Component {
+
+    render() {
+        const {
+            id,
+            url
+        } = this.props.article;
+
+        const {noteStyle, featuredTitleStyle} = styles;
+
+
+
+
+        return (
+            <TouchableNativeFeedback
+                useForeground
+                onPress={() => Linking.openURL(url)}
+                //backgroundColor = {"#000000"}
+            >
+                <BackgroundImage
+                    style={styles.imagee}
+                    resizeMode="cover"
+                    source={{uri: urlToImage || def }}
+                >
+                    <View  style={{
+                        flex: 1,
+                        backgroundColor: "rgba(0,0,0,0.7)",
+                    }}>
+                        <Text style={styles.tit}> {title}  </Text>
+
+                        <Divider/>
+                        <Text style={noteStyle}>{source.name.toUpperCase()}"                             " {time}</Text>
+
+                    </View>
+                    <Divider/>
+                </BackgroundImage>
+
+            </TouchableNativeFeedback>
+
+        );
+
+    }
+
+}
+
+
+const styles = {
+
+    noteStyle: {
+
+        margin: 10,
+        fontFamily: 'bruno',
+        position:'absolute',
+        color: '#ffffff',
+        fontSize: 10,
+        top:'80%',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+
+    },
+
+    featuredTitleStyle: {
+        height: '30%',
+        color: '#0a0808',
+        marginHorizontal: 40,
+        textShadowColor: '#000000',
+        textShadowOffset: {width: 3, height: 3},
+        textShadowRadius: 3,
+
+    },
+
+    imagee: {
+        justifyContent: 'center',
+        width: "100%",
+        height: 200,
+        tintColor: "#000000",
+
+    },
+
+    tit: {
+        top:'5%',
+        left:'3%',
+        color: '#ffffff',
+        fontSize: 15
+    },
+    card: {
+        backgroundColor: '#000000',
+        fontSize: 15
+    },
+    hover: {
+
+
+    }
+};
+

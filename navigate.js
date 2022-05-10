@@ -23,7 +23,12 @@ import {NavigationContainer} from '@react-navigation/native';
 import MaketForListsOfNamePlaces from "./Pages/AllPlacesCat.js/MaketForListsOfNamePlaces";
 import SelectedPlace from "./Pages/components/SelectedPlace";
 import MaketOfPlace from "./Pages/AllPlacesCat.js/MaketOfPlace";
-import CreatedRoute from "./Pages/CreatedRoute";
+import CreatedRoute from "./Pages/dopPages/CreatedRoute";
+import AAAVibor from "./Pages/dopPages/AAAVibor"
+import AllTelephons from "./Pages/dopPages/AllTelephons"
+import Afisha from "./Pages/dopPages/Afisha"
+import Meroptiatia from "./Pages/dopPages/Meroptiatia"
+import NewsGR from "./Pages/dopPages/NewsGR";
 
 const Stack = createStackNavigator();
 
@@ -87,6 +92,26 @@ export default function Navigate() {
             <Stack.Screen
                 name="fourthCaruselScreen"
                 component={fourthCaruselScreen}
+            />
+            <Stack.Screen
+                name="AAAVibor"
+                component={AAAVibor}
+            />
+            <Stack.Screen
+                name="AllTelephons"
+                component={AllTelephons}
+            />
+            <Stack.Screen
+                name="Afisha"
+                component={Afisha}
+            />
+            <Stack.Screen
+                name="Meroptiatia"
+                component={Meroptiatia}
+            />
+            <Stack.Screen
+                name="NewsGR"
+                component={NewsGR}
             />
             <Stack.Screen
                 name="fifthCaruselScreen"

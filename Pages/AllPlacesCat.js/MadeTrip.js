@@ -3,7 +3,7 @@ import {FlatList, StatusBar, StyleSheet, View} from 'react-native';
 import {getById} from "../service/AllPlacesService";
 import SelectedPlace from "../components/SelectedPlace";
 
-export default class MaketOfPlace extends React.Component<Props> {
+export default class MadeTrip extends React.Component<Props> {
     constructor(props) {
         super(props);
         this.categoryId = props.route.params;
@@ -25,12 +25,11 @@ export default class MaketOfPlace extends React.Component<Props> {
     }
 
 
-
     render( )  {
 
         return (
             <View style={styles.container}>
-{/*
+                {/*
                 <Image source={require('../../assets/Img/dotGreen.png')} style={styles.logo}/>
 */}
                 {/* <Text style={styles.text}>{category_of_place}</Text>*/}

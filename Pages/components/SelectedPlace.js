@@ -1,8 +1,11 @@
 import React from 'react';
-import {AsyncStorage, StatusBar, TouchableOpacity, View} from 'react-native';
+import {AsyncStorage, Image, StatusBar, TouchableOpacity, View} from 'react-native';
 import {Text} from 'react-native-elements';
 //import m from 'https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap';
 import bruno from "./../../assets/fonts/bruno.ttf"
+import {BackgroundImage} from "react-native-elements/dist/config";
+import {LinearGradient} from "react-native-svg";
+import {WebView} from "react-native-webview";
 
 //import { Card } from "@paraboly/react-native-card";
 
@@ -23,13 +26,42 @@ export default class SelectedPlace extends React.Component<Props> {
             await AsyncStorage.setItem('route', JSON.stringify(route));
         }
     }
+    static defaultProps = {
+        overScrollMode: 'always',
+        javaScriptEnabled: true,
+        thirdPartyCookiesEnabled: true,
+        scalesPageToFit: true,
+        allowsFullscreenVideo: false,
+        allowFileAccess: false,
+        saveFormDataDisabled: false,
+        cacheEnabled: true,
+        androidHardwareAccelerationDisabled: false,
+        androidLayerType: 'none',
+        setSupportMultipleWindows: true,
+        setBuiltInZoomControls: true,
+        setDisplayZoomControls: false,
+        nestedScrollEnabled: false,
+    };
 
     render() {
         console.warn(this.props);
         const {
             id,
-            place_category, name_of_place, image, age, years,
-            style_of_the_place, opening_hours, place_on_map, history, visit_cost, Link_to_the_site
+            place_category,
+            name_of_place,
+            image,
+            age,
+            years,
+            style_of_the_place,
+            opening_hours,
+            place_on_map,
+            history,
+            visit_cost,
+            Link_to_the_site,
+            foto_vnutri,
+            foto_vid1,
+            foto_vid2,
+            foto_vid3
         } = this.props.selectedPlaces;
 
         const {noteStyle, featuredTitleStyle} = styles;
@@ -39,20 +71,34 @@ export default class SelectedPlace extends React.Component<Props> {
 
             <View style={styles.container}>
 
-                {/*   <BackgroundImage
+                <Image
                     style={styles.image}
-                    resizeMode="cover"
-                    source={{uri: image}}>
-
-*/}
-
+                    source={{uri: foto_vnutri || image}}>
+                </Image>
                 <Text style={styles.title}>  {name_of_place}</Text>
 
                 <Text style={styles.noteStyle}>  {history}</Text>
                 <TouchableOpacity title='TAP' onPress={this.addToRoute} style={styles.button}>
-                    <Text style={styles.buttonText}>Добавить в маршрут</Text>
+
                 </TouchableOpacity>
-                {/*  </BackgroundImage>*/}
+                <Text style={styles.noteStyle}>Добавить в маршрут</Text>
+                <Image
+                    style={styles.image}
+                    source={{uri: foto_vid1}}>
+                </Image>
+                <Image
+                    style={styles.image}
+                    source={{uri: foto_vid2}}>
+                </Image>
+                <Image
+                    style={styles.image}
+                    source={{uri: foto_vid3}}>
+                </Image>
+                <WebView
+                    source={{uri: place_on_map}}
+                    style={{width: 300, height: 500}}
+                    startInLoadingState={true}
+                />
             </View>
 
 
@@ -69,16 +115,23 @@ const styles = {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: StatusBar.currentHeight,
-        backgroundColor: '#000000'
+        paddingTop: StatusBar.currentHeight + 10,
+        //backgroundColor: '#000000'
+    },
+    linearGradient: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 5,
+        height: 200,
+        width: 350,
     },
     title: {
 
         margin: 10,
         fontFamily: 'bruno',
         color: '#ffffff',
-        fontSize: 15,
-        top: '19%'
+        fontSize: 20,
+        paddingTop: 20,
 
     },
     noteStyle: {
@@ -87,44 +140,14 @@ const styles = {
         fontFamily: 'bruno',
         color: '#ffffff',
         fontSize: 15,
-        top: '20%'
 
     },
     image: {
-        paddingTop: StatusBar.currentHeight + 10,
-        width: "50%",
-        margin: '3%',
-        padding: '3%',
-
-
-    },
-    featuredTitleStyle: {
-        backgroundColor: '#0a0808',
-        height: '30%',
-        width: '10%',
-        marginHorizontal: 40,
-        textShadowOffset: {width: 3, height: 3},
-        textShadowRadius: 3,
-
-    },
-
-    imagee: {
         justifyContent: 'center',
-        width: "50%",
+        width: "100%",
         height: 200,
-        tintColor: "#000000",
 
     },
 
-    tit: {
-        top: '-20%',
-        left: '3%',
-        color: '#ffffff',
-        fontSize: 15
-    },
-    card: {
-        backgroundColor: '#000000',
-        fontSize: 15
-    },
-    hover: {}
+
 };

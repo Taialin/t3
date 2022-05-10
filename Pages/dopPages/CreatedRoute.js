@@ -1,8 +1,8 @@
 import React from 'react';
 import {AsyncStorage, FlatList, Image, StatusBar, StyleSheet, View} from 'react-native';
-import {getByIds} from "./service/AllPlacesService";
-import SelectedPlace from "./components/SelectedPlace";
-import SelectedCatgoryArticle from "./components/SelectedCatgoryArticle";
+import {getByIds} from "../service/AllPlacesService";
+import SelectedPlace from "../components/SelectedPlace";
+import SelectedCatgoryArticle from "../components/SelectedCatgoryArticle";
 
 export default class CreatedRoute extends React.Component<Props> {
     constructor(props) {

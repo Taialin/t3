@@ -40,8 +40,6 @@ export default class MaketForListsOfNamePlaces extends React.Component<Props> {
         return (
             <View style={styles.container}>
                 <Image source={require('../../assets/Img/dotGreen.png')} style={styles.logo}/>
-               {/* <Text style={styles.text}>{category_of_place}</Text>*/}
-
                 <FlatList style={styles.ttt}
                           data={this.state.selectedCatgoryArticles}
                           renderItem={({ item }) => <SelectedCatgoryArticle navigation={this.props.navigation}
@@ -58,7 +56,7 @@ export default class MaketForListsOfNamePlaces extends React.Component<Props> {
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+       // flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         paddingTop: StatusBar.currentHeight,
@@ -68,27 +66,14 @@ const styles = StyleSheet.create({
         position: "relative",
         width: '70%',
         height: '6%',
-        top: '-2%',
+        top: '4%',
     },
-    fone: {
-        justifyContent: 'center',
-        width: '100%',
-        height: '30%',
-        top: '-0%'
-    },
+
     ttt: {
-        width: '100%',
-        padding: 20,
+       paddingVertical: StatusBar.currentHeight
+       //padding: 20,
 
     },
-    text:{
-        position:"relative",
-        alignItems: 'center',
-        justifyContent: 'center',
-        color:'#e0e0e0',
-        top:'-1%',
-        fontSize: 20,
-        fontFamily:'Arsenal'
-    }
+
 
 });

@@ -26,30 +26,22 @@ export default class SelectedCatgoryArticle extends React.Component<Props> {
 
 
         return (
-            <TouchableOpacity  onPress={() => this.loadScene()}>
-                <Card  style={styles.imagee}>
+            <View  style={styles.container}>
+<Card>
+            <TouchableOpacity style={styles.toch} onPress={() => this.loadScene()}>
 
-
-                    <Image
+                <BackgroundImage
                         style={styles.image}
                         resizeMode="cover"
                         source={{uri: image}}>
-                    </Image>
-                        <View  style={{
-                            flex: 1,
-                            backgroundColor: "#000000",
-                            width:'113%',
-                            height: 50,
-                            left:'-6.5%'
-                        }}>
+                    <View style={{ backgroundColor: "#ffffff", height: 45, width: 250, alignItems: 'center', top: 130,left:13,justifyContent:'center', position:"absolute"}} />
+                    <Text style={styles.noteStyle}>  {name_of_place}</Text>
 
-                        <Text style={styles.noteStyle}>  {name_of_place}</Text>
+                    </BackgroundImage>
 
-                        </View>
-
-
-                </Card>
     </TouchableOpacity>
+</Card>
+            </View>
         );
 
     }
@@ -58,55 +50,29 @@ export default class SelectedCatgoryArticle extends React.Component<Props> {
 
 
 const styles = {
+    container: {
+        flex: 1,
+       alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#000000',
 
+    },
     noteStyle: {
 
-        margin: 10,
-        backgroundColor: '#0a0808',
+        margin: 15,
         fontFamily: 'bruno',
-        color: '#ffffff',
+        color: '#090707',
         fontSize: 10,
-        top:'17%'
-
+        top: 120
     },
     image: {
-        paddingTop: StatusBar.currentHeight +10,
-        width: "50%",
-        margin: '3%',
-        padding:'3%',
-
-
+        width: 280,
+        height: 180,
     },
-    featuredTitleStyle: {
-        backgroundColor: '#0a0808',
-        height: '30%',
-        width: '10%',
-        marginHorizontal: 40,
-        textShadowOffset: {width: 3, height: 3},
-        textShadowRadius: 3,
-
+    toch: {
+        width: 280,
+        height: 180,
+        flexDirection:'column'
     },
 
-    imagee: {
-        justifyContent: 'center',
-        width: "50%",
-        height: 200,
-        tintColor: "#000000",
-
-    },
-
-    tit: {
-        top:'-20%',
-        left:'3%',
-        color: '#ffffff',
-        fontSize: 15
-    },
-    card: {
-        backgroundColor: '#000000',
-        fontSize: 15
-    },
-    hover: {
-
-
-    }
 };

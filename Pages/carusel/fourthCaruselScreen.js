@@ -25,7 +25,7 @@ export default function fourthCaruselScreen({navigation}) {
             navigation.navigate('fifthCaruselScreen')
         }
             const loadScene3 = () => {
-                navigation.navigate('CreatedRoute')
+                navigation.navigate('AAAVibor')
             }
 
     return (
