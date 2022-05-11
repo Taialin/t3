@@ -27,10 +27,12 @@ export default function LogIn({navigation}) {
     });
 
         return (
-            <ImageBackground source={{uri:'https://downloader.disk.yandex.ru/preview/0ca8f57bceefd25fdf7d580290e45217f0516adccd50b7e45fd6cbcc49cb5ed0/6202623e/O8RJc04RuhPi0xW8PR43gwZZ0C-Q-sunPloSfxlXS5HO81xPDM_sZzIjyi2rID_izU8Q9ycJhGwZrJ7GGs0rEg%3D%3D?uid=0&filename=N3vrtOWidNk.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'}} style={[styles.backGround]}>
+
                 <View style={styles.container}>
+                    <Image source={require('../assets/Img/Fones/sorry.jpg')} style={[styles.backGround]}/>
                     <Image source={require('../assets/Img/GRODNO.png')} style={[styles.logo]}/>
-                   <Text style={[styles.sm]}> Здравствуйте, это дипломный проект, он не совершенен, но будет исправляться по ходу улучшения мох знаний, буду рад если вы зарегиструетесь и напишете отзыв</Text>
+                    <View style={{ backgroundColor: "rgba(0,0,0,0.37)", height: 190, width: '90%', top: '41%',left:'5%', position:'absolute',  alignItems: 'center', justifyContent: 'center',}} />
+                    <Text style={[styles.sm]}> Здравствуйте, это дипломный проект, он не совершенен,но будет исправляться по ходу улучшения мох знаний, буду рад если вы зарегиструетесь и напишете отзыв</Text>
                     <TouchableOpacity onPress={loadScene} style={styles.buttonText}>
                         <Text style={styles.buttonText}>РЕГИСТРАЦИЯ</Text>
                     </TouchableOpacity>
@@ -38,7 +40,7 @@ export default function LogIn({navigation}) {
 
                 </View>
 
-            </ImageBackground>
+
         );
 
     }
@@ -48,7 +50,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: StatusBar.currentHeight,
     },
     backGround: {
         position:'absolute',
@@ -64,21 +65,23 @@ const styles = StyleSheet.create({
     },
     sm: {
         position: "absolute",
-        justifyContent: 'center',
-        color: "#e4e5a2",
-        width: '100%',
-        top: '40%',
+        fontFamily: 'pixel',
+        color: "#fafafa",
+        width: '90%',
+        left:'10%',
+        top: '45%',
+        fontSize:14,
+        lineHeight: 27,
     },
 
     buttonText: {
         color: "#FFFFFF",
         fontFamily: 'bruno',
+
         fontStyle:'normal',
         fontWeight:'normal',
-        fontSize:12,
-        lineHeight: 27,
-        letterSpacing: 1,
-        top: '35%'
+        fontSize:15,
+        top: '36%'
     }
 
 });

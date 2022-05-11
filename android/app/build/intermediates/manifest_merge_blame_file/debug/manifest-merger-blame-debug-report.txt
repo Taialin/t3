@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.t2"
+3    package="com.t3"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
@@ -59,7 +59,7 @@
 34
 35    <application
 35-->C:\Users\belic\Desktop\app\t3\android\app\src\main\AndroidManifest.xml:21:3-31:17
-36        android:name="com.t2.MainApplication"
+36        android:name="com.t3.MainApplication"
 36-->C:\Users\belic\Desktop\app\t3\android\app\src\main\AndroidManifest.xml:21:16-47
 37        android:allowBackup="false"
 37-->C:\Users\belic\Desktop\app\t3\android\app\src\main\AndroidManifest.xml:21:162-189
@@ -91,7 +91,7 @@
 51
 52        <activity
 52-->C:\Users\belic\Desktop\app\t3\android\app\src\main\AndroidManifest.xml:24:5-29:16
-53            android:name="com.t2.MainActivity"
+53            android:name="com.t3.MainActivity"
 53-->C:\Users\belic\Desktop\app\t3\android\app\src\main\AndroidManifest.xml:24:15-43
 54            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
 54-->C:\Users\belic\Desktop\app\t3\android\app\src\main\AndroidManifest.xml:24:77-154
@@ -122,7 +122,7 @@
 67-->[:expo-file-system] C:\Users\belic\Desktop\app\t3\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:9-34:20
 68            android:name="expo.modules.filesystem.FileSystemFileProvider"
 68-->[:expo-file-system] C:\Users\belic\Desktop\app\t3\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:13-74
-69            android:authorities="com.t2.FileSystemFileProvider"
+69            android:authorities="com.t3.FileSystemFileProvider"
 69-->[:expo-file-system] C:\Users\belic\Desktop\app\t3\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:13-74
 70            android:exported="false"
 70-->[:expo-file-system] C:\Users\belic\Desktop\app\t3\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:13-37

@@ -33,15 +33,12 @@ export default function sixthCaruselScreen({navigation}) {
 
             <View style={styles.container}>
                 <Image
-                    source={{uri: 'https://downloader.disk.yandex.ru/preview/c040bc6ac1cbe3c9c8f81e000a4cebf8b95de7182145f78663a4295dab57c3b2/620e57b4/rtaIHpwdwZ3AhmvU3RiciV_viVyXWTRbGtHkY0a6PdIRKZPGq3UWt8cep1-cbZ79HVkvOXT_NAotDeT1U14HhQ%3D%3D?uid=0&filename=map.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'}}
+                    source={require('../../assets/Img/Fones/carusel6.jpg')}
                     style={[styles.backGround]}/>
-                <View style={{ backgroundColor: "#484848", height: 25, width: 90, top: '26.36%',left:'10%', position:'absolute',  alignItems: 'center', justifyContent: 'center',}} />
-                <View style={{ backgroundColor: "#484848", height: 10, width: 205, bottom: '13%',right:'0%', position:'absolute',  alignItems: 'center', justifyContent: 'center',}} />
-
                 <Image source={require('../../assets/Img/GRODNO.png')} style={[styles.logo]}/>
                 <Text style={styles.BigText}>КАРТА ГРОДНО</Text>
-                <Text style={styles.VerhText}>вся карта города Гродно{"\n"}и все </Text>
-                <Text style={styles.NizText}>страны, мира. обновление каждый час </Text>
+                <Text style={styles.VerhText}>карта вснго города Гродно{"\n"}со всеми местами </Text>
+                <Text style={styles.NizText}>просмотри город в приложении </Text>
                 <TouchableOpacity onPress={loadScene} style={styles.buttonLeft}>
                     <Image source={require("../../assets/Img/LButton.png")}/>
                 </TouchableOpacity>

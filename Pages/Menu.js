@@ -50,15 +50,13 @@ export default function Menu({navigation}) {
 
         <View style={styles.container}>
 
-            <ImageBackground
-                source={{uri: 'https://downloader.disk.yandex.ru/preview/138a2de34dbd02af0e61fbf6dff8664b61d759bc1dbe866b56a6e315d8567a35/620261b0/fi8P-pYTmxgEyaCrCKwe0r7rV3IJrN3ziC1fPQt95smcM_nblY7dutM5IgwAPS-flomTYbMnCn40C8rLnwXdyg%3D%3D?uid=0&filename=first.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'}}
-                style={[styles.backGround]}>
+            <Image source={require('../assets/Img/Fones/menu.jpg')} style={[styles.backGround]}/>
                 <Image source={require('../assets/Img/GRODNO.png')} style={[styles.logo]}/>
                 <TouchableOpacity title='TAP' onPress={loadScene} style={styles.button}>
                     <Text style={styles.buttonText}>TAP</Text>
                 </TouchableOpacity>
 
-            </ImageBackground>
+
         </View>
 
     )
@@ -68,32 +66,29 @@ export default function Menu({navigation}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
 
     },
     backGround: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '130%',
-        height: '112%',
-        left: '-15%',
-        top: '0%'
+        position:'absolute',
+        width:'100%',
+        height:'100%',
     },
     logo: {
 
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '70%',
-        height: '20%',
-        top: '-27%',
+        position: "absolute",
+        width: '87%',
+        height: '25%',
+        top: '9%',
     },
     button: {
-        alignItems: "center",
-        backgroundColor: "transparent",
-        display: "flex",
-        width: 90,
-        padding: 8,
-        top: '32%',
+        color: "#FFFFFF",
+        fontFamily: 'bruno',
+        fontStyle:'normal',
+        fontWeight:'normal',
+        fontSize:15,
+        top: '40%'
 
 
     },

@@ -52,13 +52,14 @@ const styles = StyleSheet.create({
     reg: {
         alignItems: "center",
         position: 'relative',
+        top:"6%",
         width: 300,
         height: 50,
         margin: 10,
         padding: 17,
         backgroundColor: 'rgba(213, 139, 66, 0.3)',
         color: '#FFFFFF',
-        borderRadius: 53,
+        borderRadius: 10,
 
     },
 

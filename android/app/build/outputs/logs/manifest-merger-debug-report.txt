@@ -197,7 +197,7 @@ ADDED from C:\Users\belic\Desktop\app\t3\android\app\src\main\AndroidManifest.xm
 		ADDED from C:\Users\belic\Desktop\app\t3\android\app\src\main\AndroidManifest.xml:23:69-110
 	android:name
 		ADDED from C:\Users\belic\Desktop\app\t3\android\app\src\main\AndroidManifest.xml:23:16-68
-activity#com.t2.MainActivity
+activity#com.t3.MainActivity
 ADDED from C:\Users\belic\Desktop\app\t3\android\app\src\main\AndroidManifest.xml:24:5-29:16
 	android:label
 		ADDED from C:\Users\belic\Desktop\app\t3\android\app\src\main\AndroidManifest.xml:24:44-76

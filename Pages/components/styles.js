@@ -5,14 +5,13 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: StatusBar.currentHeight,
         backgroundColor:'#000000'
     },
     backGround: {
         position:'absolute',
-        width:'87%',
-        height:'47%',
-        top: '30%'
+        width:'100%',
+        height:'100%',
+
     },
     logo: {
         position: "absolute",
@@ -23,58 +22,60 @@ const styles = StyleSheet.create({
 
     BigText: {
         position: 'absolute',
-        top: '70%',
-        left:"7%",
+        top: '50%',
+        left:"2%",
         fontFamily: 'futurisExtra',
         fontStyle: 'normal',
         fontWeight: '400',
-        fontSize: 50,
-        lineHeight: 54,
+        fontSize: 60,
+        lineHeight: 64,
         color: '#FFFFFF',
     },
     VerhText: {
         position: 'absolute',
-        top: '31%',
-        right:"8%",
+        top: '35%',
+        right:"5%",
         fontFamily: 'PoiretOne',
         textTransform:'uppercase',
         fontStyle: 'normal',
-        fontSize: 13,
+        fontSize: 16,
         fontWeight: '800',
     /*    lineHeight: 18,*/
-        color: '#b2b2b2',
+        color: '#e7e7e7',
         textAlign:'right',
+        backgroundColor:'rgba(0,0,0,0.27)',
         letterSpacing:-0.4
     },
     NizText: {
         position: 'absolute',
-        bottom: '14%',
-        right:"2%",
+        bottom: '29%',
+        left:"2%",
         fontFamily: 'PoiretOne',
         textTransform:'uppercase',
         fontStyle: 'normal',
-        fontSize: 10,
+        fontSize: 13,
         fontWeight: '400',
         lineHeight: 18,
         color: '#FFFFFF',
+        backgroundColor:'rgba(0,0,0,0.27)',
         textAlign:'right',
         letterSpacing:-0.4
     },
     buttonLeft:{
         position: 'absolute',
         left:"4%",
-        top:"95%"
+        top:"91%"
 
     },
     buttonCenter:{
         position: 'absolute',
-        top:"95.7%"
+        top:"91.7%"
 
     },
     buttonRight:{
         position: 'absolute',
         right:"4%",
-        top:"95%"
+        top:"91%"
 
     }
 

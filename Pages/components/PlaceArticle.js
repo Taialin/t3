@@ -1,5 +1,5 @@
 import React from 'react';
-import {StatusBar, TouchableOpacity} from 'react-native';
+import {Image, StatusBar, TouchableOpacity, View} from 'react-native';
 import bruno from "./../../assets/fonts/bruno.ttf"
 import {BackgroundImage} from "react-native-elements/dist/config";
 import {useNavigation} from "@react-navigation/native";

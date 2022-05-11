@@ -33,10 +33,7 @@ export default function firstCaruselScreen({navigation}) {
             <View style={styles.container}>
 
 
-                <Image source={{uri: 'https://downloader.disk.yandex.ru/preview/7ab35a7610afe92bb5e0f77e62dad42ce8896c6bbdd89fb1d1c3577498944022/62026335/t9OupWL3pD3WCIM32EWb0ErMsRdWB8QyKMebL82-ueHmHpZ9PRjTp9sNDd8RVulYOORtNZm559Oxbv8IAWFQUA%3D%3D?uid=0&filename=news.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'}} style={[styles.backGround]}/>
-               {/* <View style={{ backgroundColor: "#9d8f5d", height: 25, width: 90, top: '26.36%',left:'10%', position:'absolute',  alignItems: 'center', justifyContent: 'center',}} />
-                <View style={{ backgroundColor: "#9d8f5d", height: 10, width: 205, bottom: '13%',right:'0%', position:'absolute',  alignItems: 'center', justifyContent: 'center',}} />
-            */}
+                <Image source={require("../../assets/Img/Fones/carusel1.jpg")} style={[styles.backGround]}/>
                 <Image source={require('../../assets/Img/GRODNO.png')} style={[styles.logo]}/>
                 <Text style={styles.BigText}>НОВОСТИ{"\n"}ГРОДНО</Text>
                 <Text style={styles.VerhText}>Главные события на сегодня{"\n"}в режиме онлайн</Text>

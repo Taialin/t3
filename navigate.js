@@ -29,6 +29,7 @@ import AllTelephons from "./Pages/dopPages/AllTelephons"
 import Afisha from "./Pages/dopPages/Afisha"
 import Meroptiatia from "./Pages/dopPages/Meroptiatia"
 import NewsGR from "./Pages/dopPages/NewsGR";
+import MadeTrip from "./Pages/AllPlacesCat.js/MadeTrip";
 
 const Stack = createStackNavigator();
 
@@ -116,6 +117,10 @@ export default function Navigate() {
             <Stack.Screen
                 name="fifthCaruselScreen"
                 component={fifthCaruselScreen}
+            />
+            <Stack.Screen
+                name="MadeTrip"
+                component={MadeTrip}
             />
             <Stack.Screen
                 name="sixthCaruselScreen"

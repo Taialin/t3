@@ -35,27 +35,5 @@ allprojects {
 
             url(new File(["node", "--print", "require.resolve('jsc-android/package.json')"].execute(null, rootDir).text.trim(), "../dist"))
         }
-                {
-                    maven { url 'https://github.com/yandexmobile/yandexmapkit-android/raw/maven/' }
-
-
-                    google()
-                    mavenCentral()
-                    jcenter()
-                    maven { url 'https://www.jitpack.io' }
-                }
     }
-}
-
-dependencies {
-    implementation project(':@react-native-community_geolocation')
-    implementation project(':react-native-webview')
-    implementation(project(':react-native-maps')){
-        exclude group: 'com.google.android.gms', module: 'play-services-base'
-        exclude group: 'com.google.android.gms', module: 'play-services-maps'
-    }
-    implementation 'com.google.android.gms:play-services-base:17.2.1'
-    implementation 'com.google.android.gms:play-services-maps:17.0.0'
-    implementation "com.google.android.gms:play-services-base:16.0.1"
-    implementation "com.google.android.gms:play-services-location:16.0.0"
 }

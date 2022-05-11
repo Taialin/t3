@@ -261,7 +261,7 @@
     <item name="tag_unhandled_key_event_manager" type="id"/>
     <item name="tag_unhandled_key_listeners" type="id"/>
     <item name="text" type="id"/>
-    <item name="text2" type="id"/>
+    <item name="text3" type="id"/>
     <item name="title" type="id"/>
     <item name="up" type="id"/>
     <item name="view_tag_instance_handle" type="id"/>
@@ -301,7 +301,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="alert_description" translatable="false">Alert</string>
-    <string name="app_name">t2</string>
+    <string name="app_name">t3</string>
     <string name="button_description" translatable="false">Button</string>
     <string name="catalyst_change_bundle_location" project="catalyst" translatable="false">Change Bundle Location</string>
     <string name="catalyst_copy_button" project="catalyst" translatable="false">Copy\n</string>

@@ -2,23 +2,25 @@ import React from 'react';
 import {FlatList, StatusBar, StyleSheet, View} from 'react-native';
 import {getById} from "../service/AllPlacesService";
 import SelectedPlace from "../components/SelectedPlace";
+import {getPlaceCategory} from "../service/Place_categoryService";
+import MadeTripArticle from "../components/MadeTripArticle";
+import {getTrip} from "../service/Made_tripService";
 
 export default class MadeTrip extends React.Component<Props> {
     constructor(props) {
         super(props);
-        this.categoryId = props.route.params;
-        this.state = { selectedPlaces: [], refreshing: true };
-        this.fetchAllPlace = this.fetchAllPlace.bind(this);
+        this.state = { selectedTrip: [], refreshing: true };
+        this.fetchAllTrip = this.fetchAllTrip.bind(this);
     }
     // Called after a component is mounted
     componentDidMount() {
-        this.fetchAllPlace();
+        this.fetchAllTrip();
     }
 
-    async fetchAllPlace() {
+    async fetchAllTrip() {
         try {
-            let selectedPlaces = await getById(this.categoryId);
-            this.setState({selectedPlaces, refreshing: false});
+            let selectedMadeTripArticles = await getTrip();
+            this.setState({selectedMadeTripArticles, refreshing: false});
         } catch(e) {
             console.error(e);
         }
@@ -29,15 +31,12 @@ export default class MadeTrip extends React.Component<Props> {
 
         return (
             <View style={styles.container}>
-                {/*
-                <Image source={require('../../assets/Img/dotGreen.png')} style={styles.logo}/>
-*/}
-                {/* <Text style={styles.text}>{category_of_place}</Text>*/}
+
 
                 <FlatList style={styles.ttt}
-                          data={this.state.selectedPlaces}
-                          renderItem={({ item }) => <SelectedPlace navigation={this.props.navigation}
-                                                                   selectedPlaces={item}/>}
+                          data={this.state.selectedMadeTripArticles}
+                          renderItem={({ item }) => <MadeTripArticle selectedMadeTripArticles={item}
+                         />}
                           keyExtractor={item => item.url}
 
                 />

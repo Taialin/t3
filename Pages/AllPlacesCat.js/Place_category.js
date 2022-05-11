@@ -38,7 +38,7 @@ export default class Place_category extends React.Component<Props> {
         return (
             <View style={styles.container}>
                 <Image
-                    source={{uri: 'https://downloader.disk.yandex.ru/preview/a4884e044a5be759144a8efe1472a7541abd9a7fc8136e2ee716b10d6ae071d9/621e0c2d/Unk3_PMDtQLvbK6wAKTQwyDcEfZykhNj5DcIXPih_88cVpRDItjJBtlUQbKOkwtYoRK3r4gu7muPWyLXbTfOZg%3D%3D?uid=0&filename=fone.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048'}}
+                    source={require('../../assets/Img/dostfone.png')}
                     style={[styles.fone]}/>
                 <Image source={require('../../assets/Img/dotGreen.png')} style={styles.logo}/>
                 <Text style={styles.text}>Достопримечательности Гродно</Text>
